@@ -1,0 +1,55 @@
+.reveal .highlight {
+	color: #FFA739;
+}
+.reveal .altlight {
+	color: #47A6FF;
+}
+.reveal pre code {
+  padding: 0 1.7rem;
+}
+.reveal a {
+	color: #90CEF9;
+}
+img {
+	border: none !important;
+}
+.reveal pre code {
+	overflow-x: hidden;
+}
+.reveal .small {
+	font-size: smaller;
+	color: #999;
+}
+.reveal .slides section .fragment.highlight-red.visible {
+	color: #FFA739 !important;
+}
+.reveal .slides section .fragment.highlight-blue.visible {
+	color: #47A6FF !important;
+}
+.reveal pre {
+	box-shadow: none;
+}
+.horizontal-list {
+	list-style: none;
+}
+.horizontal-list li {
+	list-style: none;
+	display: inline-block;
+	padding: 1rem;
+}
+.reveal .down {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 50px 50px 0 50px;
+	border-color: #f2f2f2 transparent transparent transparent;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3rem;
+}
+.reveal .down.highlight {
+	border-color: #FFA739 transparent transparent transparent;
+}
+.reveal .down.altlight {
+	border-color: #47A6FF transparent transparent transparent;
+}

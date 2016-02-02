@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Skynet testing from Solaris to Docker with InSpec</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/present.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/my.css" media="screen" charset="utf-8">
+
+		<link rel="stylesheet" href="bower_components/highlightjs/styles/rainbow.css" id="theme">
+		<script src="bower_components/highlightjs/highlight.pack.min.js" charset="utf-8"></script>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div style="position: fixed; bottom: 1.5rem; right: 1.5rem; color: white; font-size: 1vw;" id="timenow">
+		</div>
+		<script type="text/javascript">
+			function toHHMMSS(time) {
+		    var hours   = time.getHours();
+		    var minutes = time.getMinutes();
+		    var seconds = time.getSeconds();
+
+		    if (hours   < 10) {hours   = "0"+hours;}
+		    if (minutes < 10) {minutes = "0"+minutes;}
+		    if (seconds < 10) {seconds = "0"+seconds;}
+		    var time    = hours+':'+minutes+':'+seconds;
+		    return time;
+			}
+
+			setInterval(function(){
+				var time = new Date();
+				document.getElementById("timenow").innerHTML = toHHMMSS(time);1
+			}, 1000)
+		</script>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>inspec</h1>
+					<h4>skynet testing</h4>
+					<p><a href="http://ow.ly/XPkvT" target="_blank">ow.ly/XPkvT</a></p>
+				</section>
+				<section>
+					<h3 style="text-transform: lowercase;">$> whoami</h3>
+					<p>Dominik Richter</p>
+					<p style="font-size: smaller">Product Manager at Chef</p>
+					<ul class="horizontal-list" style="font-size: 1vw;">
+						<li><a href="https://twitter.com/arlimus"><i class="icon-twitter"></i>@arlimus</a></li>
+						<li><a href="https://github.com/arlimus"><i class="icon-github-circled"></i>arlimus</a></li>
+						<li><a href="mailto:drichter@chef.io"><i class="icon-mail-alt"></i>drichter@chef.io</a></li>
+					</ul>
+				</section>
+				<section>
+					<h1><span class="fragment highlight-red">in</span><span class="fragment highlight-blue">spec</span></h1>
+				</section>
+				<section data-background="bridge.jpeg">
+					<h2 style="background: #333;"><span>inspec is </span></h2>
+					<h2 class=highlight style="background: #333;"><span>infrastructure testing</span></h2>
+					<p class="small" style="font-size: 1vw; color: #fff; background: #333;">
+						works with Chef, Puppet, Ansible, Salt, CFEngine, Bash
+					</p>
+				</section>
+
+				<section>
+					Create a check
+					<pre>
+						<code class="hljs ruby">
+describe service('sshd') do
+  it { should be_running }
+end
+						</code>
+					</pre>
+					<span class=fragment>
+					Test a target
+					<pre><code class="hljs bash">
+.
+
+Finished in 0.01858 seconds (files took 1.83 seconds to load)
+1 example, 0 failures
+					</code></pre>
+					</span>
+				</section>
+
+				<section>
+					<h3>Why infrastructure testing?</h3>
+				</section>
+
+				<section data-background="nuclear.jpeg">
+					<h3>Code breaks</h3>
+					<p style="font-size: smaller;">normal accident theory</p>
+				</section>
+
+				<section>
+					<h3>Why infrastructure testing?</h3>
+					<h3 class="highlight fragment">Reduce the number of defects</h3>
+				</section>
+
+				<section>
+					<h3>Why infrastructure testing?</h3>
+				  <h3 class="highlight fragment">Security and Compliance testing</h3>
+					<p class="fragment reference">
+						Referece: <a href="http://cfgmgmtcamp.eu/schedule/chef/goetz.html">
+							InSpec, or How to translate compliance spreadsheets into code - Michael Goetz
+						</a>
+					</p>
+				</section>
+
+				<section>
+					<h3>What is special about inspec?</h3>
+					<h3 class="fragment highlight">1. Test any target</h3>
+					<h3 class="fragment altlight">2. Be expressive</h3>
+				</section>
+
+				<section>
+					<h2 class=highlight>1 Test any target</h2>
+				</section>
+
+				<section>
+					<h3>What do you run these days?</h3>
+					<ul>
+						<li class=fragment>
+							Bare-metal
+							<span class="fragment"> / VMs</span>
+							<span class="fragment"> / Containers</span>
+						</li>
+						<li class=fragment>
+							Linux
+							<span class="fragment"> / Windows</span>
+							<span class="fragment"> / other / legacy</span>
+						</li>
+					</ul>
+
+					<p class="fragment">
+						Reference: <a href="http://cfgmgmtcamp.eu/schedule/speakers/StuartPreston.html">
+							Cross-platform Infrastructure testing with Microsoft Azure, Test Kitchen and InSpec - Stuart Preston
+						</a>
+					</p>
+				</section>
+
+				<section data-transition="fade-out">
+					<h3>Tiny HowTo</h3>
+					<pre class=fragment><code class="hljs bash">
+gem install inspec
+					</code></pre>
+					<pre class=fragment><code class="hljs bash">
+git clone http://github.com/chef/inspec.git
+					</code></pre>
+				</section>
+
+				<section data-transition="fade-out">
+					<h3>Tiny HowTo</h3>
+					<pre><code class="hljs bash">
+inspec
+					</code></pre>
+					<pre class=fragment><code class="hljs bash">
+Commands:
+  inspec archive PATH    # archive a profile to tar.gz (default) or zip
+  inspec check PATH      # verify all tests at the specified PATH
+  inspec detect          # detect the target OS
+  inspec exec PATHS      # run all test files at the specified PATH.
+  inspec help [COMMAND]  # Describe available commands or one specific command
+  inspec json PATH       # read all tests in PATH and generate a JSON summary
+  inspec shell           # open an interactive debugging shell
+  inspec version         # prints the version of this tool
+					</code></pre>
+				</section>
+				<section data-transition="fade">
+					<h3>Tiny HowTo</h3>
+					<span>
+					<pre><code class="hljs bash">
+inspec exec test.rb
+					</code></pre>
+					<pre class=fragment><code class="hljs bash">
+.
+
+Finished in 0.00228 seconds (files took 1.95 seconds to load)
+1 example, 0 failures
+
+
+
+
+
+					</code></pre>
+				</section>
+				<section  data-transition="fade">
+					<h3>Tiny HowTo</h3>
+					<span>
+					<pre><code class="hljs bash">
+inspec exec test.rb
+					</code></pre>
+					<pre class=fragment><code class="hljs bash">
+inspec exec /path/to/profile
+					</code></pre>
+					<pre class=fragment><code class="hljs bash">
+inspec exec github.com/chef/some-profile.git
+					</code></pre>
+				</section>
+
+				<section data-transition="fade">
+					<h3>Test your local node</h3>
+					<pre><code class="hljs bash">
+inspec exec test.rb
+					</code></pre>
+					<p class=small>&nbsp;</p>
+				</section>
+
+				<section data-transition="fade">
+					<h3>Test remote via SSH</h3>
+					<pre><code class="hljs bash">
+inspec exec test.rb -i vagrant.key -t ssh://root@172.17.0.1:11022
+					</code></pre>
+					<p class=small>no Ruby / agent on the node</p>
+				</section>
+
+				<section data-transition="fade">
+					<h3>Test remote via WinRM</h3>
+					<pre><code class="hljs bash">
+inspec exec test.rb -t winrm://Admin@192.168.1.2 --password super
+					</code></pre>
+					<p class=small>no Ruby / agent on the node</p>
+				</section>
+
+				<section data-transition="fade-in">
+					<h3>Test Docker Container</h3>
+					<pre><code class="hljs bash">
+inspec exec test.rb -t docker://3cc8837bb6a8
+					</code></pre>
+					<p class=small>no SSH / agent on the container</p>
+				</section>
+
+				<section>
+					<h3>Anatomy of a container test</h3>
+					<pre><code class="hljs ruby">
+describe package('wget') do
+  it { should be_installed }
+end
+
+describe file('/fetch-all.sh') do
+  it { should be_file }
+  its('owner') { should eq 'root' }
+  its('mode') { should eq 0640 }
+end
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Anatomy of a container test</h3>
+					<pre><code class="hljs bash">
+inspec exec dtest.rb -t docker://f02e                                                                                              x1 8h44m master[d140c6a]
+					</code></pre>
+					<pre class=fragment><code class="hljs bash">
+....
+
+Finished in 0.1537 seconds (files took 1.77 seconds to load)
+4 examples, 0 failures
+					</code></pre>
+				</section>
+
+				<section data-background="#eee">
+					<img src="test-to-os.svg.png" alt="execution tree" style="box-shadow: none" />
+				</section>
+
+				<section>
+					<h3>Run via test-kitchen</h3>
+					<a href="https://github.com/chef/kitchen-inspec"><code>kitchen-inspec</code></a>
+				</section>
+
+				<section>
+					<h3>Anatomy of a Solaris test</h3>
+					<pre><code class="hljs ruby">
+describe os do
+  it { should be_solaris }
+end
+
+describe package('network/ssh') do
+  it { should be_installed }
+end
+
+describe service('/network/ssh') do
+  it { should be_running }
+end
+					</code></pre>
+				</section>
+
+				<section>
+					<h2 class=altlight>2 Be expressive</h2>
+				</section>
+
+				<section>
+					<pre><code class="hljs ruby">
+describe file('/etc/ssh/sshd_config') do
+  its(:content) { should match /Protocol 2/ }
+end
+					</code></pre>
+
+					<pre class=fragment><code class="hljs ruby">
+describe sshd_config do
+  its('Protocol') { should cmp 2 }
+end
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Available resources</h3>
+					<p style="word-spacing: 30px;">
+						apache_conf apache apt auditd_conf auditd_rules audit_policy bond
+						bridge command csv directory etc_group file gem group host
+						inetd_conf ini interface iptables json kernel_module
+						kernel_parameter limits_conf login_def mount mysql_conf mysql
+						mysql_session npm ntp_conf oneget os_env os package parse_config
+						passwd pip port postgres_conf postgres postgres_session processes
+						registry_key script security_policy service ssh_conf user
+						windows_feature yaml yum
+					</p>
+				</section>
+
+				<section>
+					<h3>Custom resources</h3>
+					<pre class=fragment><code class="hljs bash">
+.
+├── controls
+│   └── test.rb
+├── inspec.yml
+└── libraries
+    └── gordon.rb
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code class="hljs ruby">
+class Tiny < Inspec.resource(1)
+  name 'tiny'
+end
+					</code></pre>
+
+					<pre class=fragment><code class="hljs ruby">
+describe tiny do
+  # I exist!
+  # Can't do anything yet...
+end
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code class="hljs ruby">
+class Gordon < Inspec.resource(1)
+  name 'gordon'
+
+  def content
+    'signal me'
+  end
+end
+					</code></pre>
+
+					<pre class=fragment><code class="hljs ruby">
+describe gordon do
+  its('content') { should eq 'signal me' }
+end
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code class="hljs ruby">
+class Gordon < Inspec.resource(1)
+  name 'gordon'
+
+  def content
+    inspec.file('/etc/gordon/gordon.yaml').content
+  end
+end
+					</code></pre>
+
+					<pre class=fragment><code class="hljs ruby">
+describe gordon do
+  its('content') { should eq 'hello: world' }
+end
+					</code></pre>
+				</section>
+
+				<section data-background="#eee">
+					<img src="resource-inheritance.svg.png" alt="execution tree" style="box-shadow: none" />
+				</section>
+
+				<section>
+					<pre><code class="hljs ruby">
+class Gordon < Inspec.resource(1)
+  name 'gordon'
+
+  def params
+    inspec.yaml('/etc/gordon/gordon.yaml').params
+  end
+end
+					</code></pre>
+
+					<pre class=fragment><code class="hljs ruby">
+describe gordon.params['hello'] do
+  it { should eq 'world' }
+end
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>The way forward
+						<span class="fragment">- <span class="highlight">1.0</span> <span style="font-size: small">March</span> </span>
+					</h2>
+					<ul>
+						<li class="fragment">Dependency resolution</li>
+						<li class="fragment">Resource packs</li>
+						<li class="fragment">Attributes</li>
+						<li class="fragment">Plugins</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Join InSpec</h2>
+					<h1><a href="https://github.com/chef/inspec" target="_blank">
+						<i class="icon-github-circled"></i>
+					</a></h1>
+					<h6><a href="https://github.com/chef/inspec" target="_blank">github.com/chef/inspec</a></h6>
+				</section>
+
+				<section>
+					<h2>Thank you</h2>
+					<p><a href="http://ow.ly/XPkvT" target="_blank">ow.ly/XPkvT</a></p>
+					<ul class="horizontal-list" style="font-size: 1vw;">
+						<li><a href="https://twitter.com/arlimus"><i class="icon-twitter"></i>@arlimus</a></li>
+						<li><a href="https://github.com/arlimus"><i class="icon-github-circled"></i>arlimus</a></li>
+						<li><a href="mailto:drichter@chef.io"><i class="icon-mail-alt"></i>drichter@chef.io</a></li>
+					</ul>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
