@@ -37,10 +37,16 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+		<style media="screen">
+			.col50 {
+				width: 49%;
+				display: inline-block;
+			}
+		</style>
 	</head>
 
 	<body>
-		<div style="position: fixed; bottom: 1.5rem; right: 1.5rem; color: white; font-size: 1vw;" id="timenow">
+		<div style="position: fixed; bottom: 1.5rem; right: 1.5rem; color: white; font-size: 1vw; z-index: 10000;" id="timenow">
 		</div>
 		<script type="text/javascript">
 			function toHHMMSS(time) {
@@ -68,18 +74,29 @@
 
 				<section>
 					<h1>inspec</h1>
-					<h4>skynet testing</h4>
-					<p><a href="http://ow.ly/XPkvT" target="_blank">ow.ly/XPkvT</a></p>
+					<h4>DevOps testing from Docker to Solaris</h4>
+					<p><a href="http://ow.ly/Zxlkf" target="_blank">ow.ly/Zxlkf</a></p>
 				</section>
 				<section>
-					<h3 style="text-transform: lowercase;">$> whoami</h3>
-					<p>Dominik Richter</p>
-					<p style="font-size: smaller">Product Manager at Chef</p>
-					<ul class="horizontal-list" style="font-size: 1vw;">
-						<li><a href="https://twitter.com/arlimus"><i class="icon-twitter"></i>@arlimus</a></li>
-						<li><a href="https://github.com/arlimus"><i class="icon-github-circled"></i>arlimus</a></li>
-						<li><a href="mailto:drichter@chef.io"><i class="icon-mail-alt"></i>drichter@chef.io</a></li>
-					</ul>
+					<h3 style="text-transform: lowercase;">$> whoarewe</h3>
+					<div class="col50">
+						<p>Christoph Hartmann</p>
+						<p style="font-size: smaller">Engineering Manager at Chef</p>
+						<ul class="horizontal-list" style="font-size: 0.8vw;">
+							<li><a href="https://twitter.com/chri_hartmann"><i class="icon-twitter"></i>@chri_hartmann</a></li>
+							<li><a href="https://github.com/chris-rock"><i class="icon-github-circled"></i>chris-rock</a></li>
+							<li><a href="mailto:chartmann@chef.io"><i class="icon-mail-alt"></i>chartmann@chef.io</a></li>
+						</ul>
+					</div>
+					<div class="col50">
+						<p>Dominik Richter</p>
+						<p style="font-size: smaller">Product Manager at Chef</p>
+						<ul class="horizontal-list" style="font-size: 0.8vw;">
+							<li><a href="https://twitter.com/arlimus"><i class="icon-twitter"></i>@arlimus</a></li>
+							<li><a href="https://github.com/arlimus"><i class="icon-github-circled"></i>arlimus</a></li>
+							<li><a href="mailto:drichter@chef.io"><i class="icon-mail-alt"></i>drichter@chef.io</a></li>
+						</ul>
+					<div>
 				</section>
 				<section>
 					<h1><span class="fragment highlight-red">in</span><span class="fragment highlight-blue">spec</span></h1>
@@ -121,19 +138,22 @@ Finished in 0.01858 seconds (files took 1.83 seconds to load)
 					<p style="font-size: smaller;">normal accident theory</p>
 				</section>
 
-				<section>
-					<h3>Why infrastructure testing?</h3>
-					<h3 class="highlight fragment">Reduce the number of defects</h3>
+				<section data-background="#fff">
+					<img src="dc.complexity.1.png" alt="DC complexity 1" style="box-shadow: none" />
+				</section>
+
+				<section data-background="#fff">
+					<img src="dc.complexity.2.png" alt="DC complexity 2" style="box-shadow: none" />
+				</section>
+
+				<section data-background="#fff">
+					<img src="dc.complexity.3.png" alt="DC complexity 3" style="box-shadow: none" />
 				</section>
 
 				<section>
 					<h3>Why infrastructure testing?</h3>
-				  <h3 class="highlight fragment">Security and Compliance testing</h3>
-					<p class="fragment reference">
-						Referece: <a href="http://cfgmgmtcamp.eu/schedule/chef/goetz.html">
-							InSpec, or How to translate compliance spreadsheets into code - Michael Goetz
-						</a>
-					</p>
+					<h3 class="highlight fragment">1. Reduce the number of defects</h3>
+					<h3 class="highlight fragment">2. Security and Compliance testing</h3>
 				</section>
 
 				<section>
@@ -155,17 +175,28 @@ Finished in 0.01858 seconds (files took 1.83 seconds to load)
 							<span class="fragment"> / Containers</span>
 						</li>
 						<li class=fragment>
+							On-premise
+							<span class="fragment"> / hybrid cloud</span>
+							<span class="fragment"> / AWS / Azure / ...</span>
+						</li>
+						<li class=fragment>
 							Linux
 							<span class="fragment"> / Windows</span>
 							<span class="fragment"> / other / legacy</span>
 						</li>
+						<li class=fragment>
+							Java
+							<span class="fragment"> / PHP</span>
+							<span class="fragment"> / Python</span>
+							<span class="fragment"> / Rails ...</span>
+						</li>
 					</ul>
+				</section>
 
-					<p class="fragment">
-						Reference: <a href="http://cfgmgmtcamp.eu/schedule/speakers/StuartPreston.html">
-							Cross-platform Infrastructure testing with Microsoft Azure, Test Kitchen and InSpec - Stuart Preston
-						</a>
-					</p>
+				<section>
+					<h5>test</h5>
+					<h1 class=highlight>all</h1>
+					<h5>of them</h5>
 				</section>
 
 				<section data-transition="fade-out">
@@ -238,7 +269,7 @@ inspec exec test.rb
 				<section data-transition="fade">
 					<h3>Test remote via SSH</h3>
 					<pre><code class="hljs bash">
-inspec exec test.rb -i vagrant.key -t ssh://root@172.17.0.1:11022
+inspec exec test.rb -i vagrant.key -t ssh://root@172.17.0.1:22
 					</code></pre>
 					<p class=small>no Ruby / agent on the node</p>
 				</section>
@@ -246,7 +277,7 @@ inspec exec test.rb -i vagrant.key -t ssh://root@172.17.0.1:11022
 				<section data-transition="fade">
 					<h3>Test remote via WinRM</h3>
 					<pre><code class="hljs bash">
-inspec exec test.rb -t winrm://Admin@192.168.1.2 --password super
+inspec exec test.rb -t winrm://Admin@host --password super
 					</code></pre>
 					<p class=small>no Ruby / agent on the node</p>
 				</section>
@@ -277,7 +308,7 @@ end
 				<section>
 					<h3>Anatomy of a container test</h3>
 					<pre><code class="hljs bash">
-inspec exec dtest.rb -t docker://f02e                                                                                              x1 8h44m master[d140c6a]
+inspec exec dtest.rb -t docker://f02e
 					</code></pre>
 					<pre class=fragment><code class="hljs bash">
 ....
@@ -287,14 +318,29 @@ Finished in 0.1537 seconds (files took 1.77 seconds to load)
 					</code></pre>
 				</section>
 
-				<section data-background="#eee">
+				<!-- <section data-background="#eee">
 					<img src="test-to-os.svg.png" alt="execution tree" style="box-shadow: none" />
-				</section>
+				</section> -->
 
 				<section>
 					<h3>Run via test-kitchen</h3>
 					<a href="https://github.com/chef/kitchen-inspec"><code>kitchen-inspec</code></a>
 				</section>
+
+				<section>
+					<h3>What is <span class=highlight>test-kitchen</span>?</h3>
+					<p>Test applications and infrastructure automation on different systems
+					and environments.</p>
+				</section>
+
+				<section>
+					<img src="delivery.kitchen.run.png" alt="execution tree" style="box-shadow: none" />
+				</section>
+
+				<section data-background="#fff">
+					<img src="solaris.svg" alt="solaris logo" style="box-shadow: none" />
+				</section>
+
 
 				<section>
 					<h3>Anatomy of a Solaris test</h3>
@@ -345,6 +391,7 @@ end
 					</p>
 				</section>
 
+				<section>
 				<section>
 					<h3>Custom resources</h3>
 					<pre class=fragment><code class="hljs bash">
@@ -429,16 +476,16 @@ describe gordon.params['hello'] do
 end
 					</code></pre>
 				</section>
+				</section>
 
 				<section>
 					<h2>The way forward
-						<span class="fragment">- <span class="highlight">1.0</span> <span style="font-size: small">March</span> </span>
+						<span class="fragment">- <span class="highlight">1.0</span> <span style="font-size: small"></span> </span>
 					</h2>
 					<ul>
 						<li class="fragment">Dependency resolution</li>
 						<li class="fragment">Resource packs</li>
 						<li class="fragment">Attributes</li>
-						<li class="fragment">Plugins</li>
 					</ul>
 				</section>
 
@@ -448,12 +495,18 @@ end
 						<i class="icon-github-circled"></i>
 					</a></h1>
 					<h6><a href="https://github.com/chef/inspec" target="_blank">github.com/chef/inspec</a></h6>
+					<h6 style="font-size: 1.2vw"><a href="https://gitter.im/chef/inspec" target="_blank">gitter.im/chef/inspec</a></h6>
 				</section>
 
 				<section>
 					<h2>Thank you</h2>
-					<p><a href="http://ow.ly/XPkvT" target="_blank">ow.ly/XPkvT</a></p>
-					<ul class="horizontal-list" style="font-size: 1vw;">
+					<p><a href="http://ow.ly/Zxlkf" target="_blank">ow.ly/Zxlkf</a></p>
+					<ul class="horizontal-list" style="font-size: 0.8vw; display: block; text-align: center">
+						<li><a href="https://twitter.com/chri_hartmann"><i class="icon-twitter"></i>@chri_hartmann</a></li>
+						<li><a href="https://github.com/chris-rock"><i class="icon-github-circled"></i>chris-rock</a></li>
+						<li><a href="mailto:chartmann@chef.io"><i class="icon-mail-alt"></i>chartmann@chef.io</a></li>
+					</ul>
+					<ul class="horizontal-list" style="font-size: 0.8vw; display: block; text-align: center">
 						<li><a href="https://twitter.com/arlimus"><i class="icon-twitter"></i>@arlimus</a></li>
 						<li><a href="https://github.com/arlimus"><i class="icon-github-circled"></i>arlimus</a></li>
 						<li><a href="mailto:drichter@chef.io"><i class="icon-mail-alt"></i>drichter@chef.io</a></li>
