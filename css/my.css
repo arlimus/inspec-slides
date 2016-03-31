@@ -56,8 +56,9 @@ img {
 .reveal pre {
 	box-shadow: none;
 }
-.vertical-list {
+.reveal .vertical-list {
 	list-style: none;
+  margin: 0;
 }
 .vertical-list li {
 	list-style: none;
@@ -87,3 +88,11 @@ img {
 .reveal .down.altlight {
 	border-color: #47A6FF transparent transparent transparent;
 }
+
+.reveal .c2, .reveal .c4, .reveal .c6, .reveal .c8 {
+  display: inline-block;
+}
+.reveal .c2 { width: 20%; }
+.reveal .c4 { width: 40%; }
+.reveal .c6 { width: 60%; }
+.reveal .c8 { width: 80%; }

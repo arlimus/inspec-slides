@@ -73,8 +73,9 @@
 			<div class="slides">
 
 				<section>
-					<h1>Chef Compliance 1.0</h1>
+					<h1>Chef Compliance</h1>
 				</section>
+
 
 				<section>
 					<h3 style="text-transform: lowercase;">$> whoarewe</h3>
@@ -98,33 +99,83 @@
 					<div>
 				</section>
 
-				<section>
-					<h1>Chef Compliance 1.0</h1>
-				</section>
+				<!--
+				Operating at velocity has benefits in addition to agile, scalable compliance.
+				The processes, culture and technology used for compliance at velocity also
+				give an enterprise a level of velocity, scale and consistency that lets it
+				compete in the digital age. We refer to such an enterprise as a “coded business”.
+				-->
+				<!-- <section>
+					<h2>The promise of the coded business</h2>
+					<img src="codification.promises.png" alt="Codification promises" style="margin-top: -2rem;"/>
+				</section> -->
 
-				<section>
-					<ol>
-						<li>Chef Compliance review</li>
-						<li class="fragment">Native compliance profiles<div style="font-size: smaller">(SCAP / MSCCM)</div></li>
-						<li class="fragment">Chef Server and Client integration</li>
-					</ol>
-				</section>
+				<!--
+				The coded business collapses the traditionally distinct strategic focus
+				areas of customer intimacy, operational efficiency and product improvement
+				into a single accelerated cycle. We refer to this as the automation cycle,
+				because the automation of the process throughout the product delivery
+				lifecycle is core to its effectiveness.
+				-->
+				<!-- <section>
+					<h2>Transformation to high-velocity</h2>
+					<img src="business.functions.png" alt="Business functions" style="width: 70%;"/>
+				</section> -->
 
 				<!-- <section>
 					<h1><span class="fragment highlight-red">in</span><span class="fragment highlight-blue">spec</span></h1>
 				</section> -->
 
+				<!-- <section>
+					<h2>What is Chef?</h2>
+					<img src="chef.logo.png" alt="What is Chef" style="width: 30%;"/>
+				</section>
+
 				<section>
-					<h2>What is Chef Compliance?</h2>
+					<h2>DevOps automation from<br>conception to production.</h2>
+				</section> -->
+
+				<section>
+					<h2>What is <img src="chef.logo.png" alt="Chef" style="margin: 0 0 -0.16em 0; height: 1em; display: inline-block;"/>
+						<span class="highlight">Compliance</span>?</h2>
 				</section>
 
 				<section>
 					<h2>Compliance as Code.</h2>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h2>Compliance as Code.</h2>
 					<img src="codification.promises.png" alt="Codification promises" style="margin-top: -2rem;"/>
+				</section> -->
+
+				<section>
+					<h2>What is it not?</h2>
+					<ul class=vertical-list>
+						<li class=fragment>(H)IDS / IPS</li>
+						<li class=fragment>Firewall</li>
+						<li class=fragment>AntiVirus</li>
+						<li class=fragment>Pentesting tool</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Compliance as Code.</h2>
+					<img src="same.stack+workflow.png" alt="Same stack and workflow" />
+				</section>
+
+				<!--
+				PART 1: LANGUAGE
+				================
+				-->
+
+				<section data-background="silos.jpg">
+					<h2 style="color: #FFA739; background: rgba(0,0,0,0.6)">Traditional Compliance</h2>
+				</section>
+
+				<section>
+					<h2>Dev &amp; Ops set up an App</h2>
+					<img src="compliance.users.devops.png" alt="DevOps users" style="clip: rect(0px,60px,200px,0px);"/>
 				</section>
 
 				<section>
@@ -135,7 +186,14 @@
 				<section data-background="letters.jpg">
 				</section>
 
+				<section data-background="compliance.doc.png">
+				</section>
+
 				<section data-background="cli.output.png">
+				</section>
+
+				<section>
+					<img src="different.languages.png" alt="Different language"/>
 				</section>
 
 				<section>
@@ -173,6 +231,15 @@ end
 				</section>
 
 				<section>
+					<h3>One language</h3>
+					<ul class="vertical-list">
+						<li>Linux<span class=fragment>, Windows</span><span class=fragment>, BSD, Solaris, AIX, ...</span></li>
+						<li class=fragment>Bare-metal<span class=fragment>, VMs</span><span class=fragment>, Containers</span></li>
+						<li class=fragment>Machines<span class=fragment>, DBs, Endpoints</span><span class=fragment>, APIs (AWS, ...)</span></li>
+					</ul>
+				</section>
+
+				<!-- <section>
 					<h2><span class="fragment highlight-red">Compliance</span> and <span class="fragment highlight-blue">integrity</span></h2>
 				</section>
 
@@ -190,7 +257,7 @@ end
 						<h4 class=fragment>and</h4>
 						<h2 class=fragment>Chef integration</h2>
 					</span>
-				</section>
+				</section> -->
 
 				<section>
 					<h1>CIS and SCAP</h1>
@@ -284,7 +351,7 @@ end
 					</pre>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Automated conversion</h3>
 					<pre>
 						<code class="hljs bash">
@@ -318,66 +385,68 @@ inspec exec profile.tgz
 
 				<section>
 					<h1>MSCCM</h1>
+				</section> -->
+
+				<!--
+				PART 2: WORKFLOW
+				================
+				-->
+
+				<section>
+					<h2>Compliance as Code.</h2>
+					<img src="same.stack+workflow.png" alt="Same stack and workflow" />
 				</section>
 
 				<section>
-					<h1>Language improvements</h1>
+					<h2>Traditional workflow</h2>
 				</section>
 
 				<section>
-					<h3>Kudos to all <a href="https://github.com/chef/inspec/graphs/contributors">contributors</a> !</h3>
+					<h2>Create new artifacts</h2>
+					<img src="old.workflow.1.png" alt="New artifact development flow" />
 				</section>
 
 				<section>
-					<h2>Profile specifications</h2>
-					<p style="font-size: smaller;">
-						Special thanks to Aaron Lippold and Kina Shah
-					</p>
+					<h2>To reach production</h2>
+					<img src="old.workflow.png" alt="Development stopped by auditors" />
+				</section>
+
+				<section data-background="hoover.dam.jpg">
+				</section>
+
+				<!-- <section data-background="nuclear.jpeg">
+				</section> -->
+
+				<section>
+					<h2>DevOps workflow</h2>
 				</section>
 
 				<section>
-					<pre style="margin: 0 auto;">
-						<code class="hljs ruby">
-control 'ssh-1' do
-  impact 1.0
-  title 'Allow only SSH Protocol 2'
-
-  desc 'Only SSH protocol version 2 connections should be permitted.'
-
-  tag 'production','development'
-  tag 'ssh','sshd','openssh-server'
-
-  tag cce: 'CCE-27072-8'
-  tag disa: 'RHEL-06-000227'
-
-  tag nist: 'AC-3(10).i'
-  tag nist: 'IA-5(1)'
-
-						</code>
-					</pre>
+					<img src="compliance.workflow.png" alt="Compliance Workflow"/>
 				</section>
 
 				<section>
-					<h1>Compliance and Chef</h1>
+					<h2>Create and test early on</h2>
+				</section>
+
+				<section data-background="ssh-profile.png">
+				</section>
+
+				<section data-background="compliance-kitchen-test.png">
 				</section>
 
 				<section>
-					<h2>Remember when Compliance was released?</h2>
+					<h2>Test continuously</h2>
 				</section>
 
-				<section data-background="berlin.wall.jpg">
-				</section>
-
-				<section>
-					<h2>Chef Client as an <span class="fragment highlight-red">agent</span> for <span class="fragment highlight-blue">Compliance</span></h2>
+				<section data-background="delivery.integration.1.png">
 				</section>
 
 				<section>
-					<h2>The way forward</h2>
-					<ul>
-						<li class="fragment">Compliance profiles</li>
-						<li class="fragment">Workflow integration</li>
-					</ul>
+					<h2>Deploy, Operate, Verify</h2>
+				</section>
+
+				<section data-background="ui.screenshot.png">
 				</section>
 
 				<section>
@@ -390,6 +459,36 @@ control 'ssh-1' do
 					<img src="full.workflow.png" alt="Full Workflow"/>
 				</section>
 
+				<section>
+					<section>
+						<h2>Compliance as Code.</h2>
+						<img src="same.stack+workflow.png" alt="Same stack and workflow" />
+					</section>
+
+					<section>
+						<h1>Compliance and Chef</h1>
+					</section>
+
+					<section>
+						<h2>Remember when Compliance was released?</h2>
+					</section>
+
+					<section data-background="berlin.wall.jpg">
+					</section>
+
+					<section>
+						<h2>Chef Client as an <span class="fragment highlight-red">agent</span> for <span class="fragment highlight-blue">Compliance</span></h2>
+					</section>
+				</section>
+
+
+				<!-- <section>
+					<h2>The way forward</h2>
+					<ul>
+						<li class="fragment">Compliance profiles</li>
+						<li class="fragment">Workflow integration</li>
+					</ul>
+				</section> -->
 
 				<section>
 					<h2>Join InSpec</h2>
