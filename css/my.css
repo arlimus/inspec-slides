@@ -1,3 +1,27 @@
+body {
+  background: #d4d4d4;
+  background: -moz-radial-gradient(center, circle cover, white 0%, #d4d4d4 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, white), color-stop(100%, #d4d4d4));
+  background: -webkit-radial-gradient(center, circle cover, white 0%, #d4d4d4 100%);
+  background: -o-radial-gradient(center, circle cover, white 0%, #d4d4d4 100%);
+  background: -ms-radial-gradient(center, circle cover, white 0%, #d4d4d4 100%);
+  background: radial-gradient(center, circle cover, white 0%, #d4d4d4 100%);
+  background-color: #d4d4d4;
+}
+.reveal .copyright {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: "League Gothic", Impact, sans-serif;
+}
+.reveal ol li {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+.reveal section img {
+  box-shadow: none;
+  background: none;
+}
 .reveal .highlight {
 	color: #FFA739;
 }
@@ -8,7 +32,10 @@
   padding: 0 1.7rem;
 }
 .reveal a {
-	color: #90CEF9;
+	color: #008DEF;
+}
+.reveal a:hover {
+	color: #2EA9FF;
 }
 img {
 	border: none !important;
@@ -21,13 +48,20 @@ img {
 	color: #999;
 }
 .reveal .slides section .fragment.highlight-red.visible {
-	color: #FFA739 !important;
+	color: #F58701 !important;
 }
 .reveal .slides section .fragment.highlight-blue.visible {
 	color: #47A6FF !important;
 }
 .reveal pre {
 	box-shadow: none;
+}
+.vertical-list {
+	list-style: none;
+}
+.vertical-list li {
+	list-style: none;
+	padding: 1rem;
 }
 .horizontal-list {
 	list-style: none;
