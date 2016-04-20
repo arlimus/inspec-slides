@@ -105,10 +105,10 @@
 				give an enterprise a level of velocity, scale and consistency that lets it
 				compete in the digital age. We refer to such an enterprise as a “coded business”.
 				-->
-				<!-- <section>
+				<section>
 					<h2>The promise of the coded business</h2>
 					<img src="codification.promises.png" alt="Codification promises" style="margin-top: -2rem;"/>
-				</section> -->
+				</section>
 
 				<!--
 				The coded business collapses the traditionally distinct strategic focus
@@ -117,23 +117,19 @@
 				because the automation of the process throughout the product delivery
 				lifecycle is core to its effectiveness.
 				-->
-				<!-- <section>
+				<section>
 					<h2>Transformation to high-velocity</h2>
 					<img src="business.functions.png" alt="Business functions" style="width: 70%;"/>
-				</section> -->
+				</section>
 
-				<!-- <section>
-					<h1><span class="fragment highlight-red">in</span><span class="fragment highlight-blue">spec</span></h1>
-				</section> -->
-
-				<!-- <section>
+				<section>
 					<h2>What is Chef?</h2>
 					<img src="chef.logo.png" alt="What is Chef" style="width: 30%;"/>
 				</section>
 
 				<section>
 					<h2>DevOps automation from<br>conception to production.</h2>
-				</section> -->
+				</section>
 
 				<section>
 					<h2>What is <img src="chef.logo.png" alt="Chef" style="margin: 0 0 -0.16em 0; height: 1em; display: inline-block;"/>
@@ -231,13 +227,202 @@ end
 				</section>
 
 				<section>
-					<h3>One language</h3>
+					<h1>InSpec</h1>
+				</section>
+
+				<section>
+					<h3>Compliance language</h3>
+					<pre>
+						<code class="hljs ruby">
+control 'ssh-1234' do
+  impact 1.0
+  title 'Server: Set protocol version to SSHv2'
+  desc "
+    Set the SSH protocol version to 2. Don't use legacy
+    insecure SSHv1 connections anymore...
+  "
+
+  describe sshd_config do
+    its('Protocol') { should eq('2') }
+  end
+end
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> One language</h3>
 					<ul class="vertical-list">
 						<li>Linux<span class=fragment>, Windows</span><span class=fragment>, BSD, Solaris, AIX, ...</span></li>
-						<li class=fragment>Bare-metal<span class=fragment>, VMs</span><span class=fragment>, Containers</span></li>
-						<li class=fragment>Machines<span class=fragment>, DBs, Endpoints</span><span class=fragment>, APIs (AWS, ...)</span></li>
 					</ul>
 				</section>
+
+				<section>
+					<h3>Windows</h3>
+					<pre>
+						<code class="hljs ruby">
+control 'windows-base-201' do
+  impact 1.0
+  title 'Strong Windows NTLMv2 Authentication Enabled; Weak LM Disabled'
+  desc '
+    @link: http://support.microsoft.com/en-us/kb/823659
+  '
+  describe registry_key('HKLM\System\CurrentControlSet\Control\Lsa') do
+    it { should exist }
+    its('LmCompatibilityLevel') { should eq 4 }
+  end
+end
+						</code>
+					</pre>
+				</section>
+
+				<!-- <section data-transition="fade-out">
+					<h3>Tiny HowTo</h3>
+					<pre><code class="hljs bash">
+inspec
+					</code></pre>
+					<pre class=fragment><code class="hljs bash">
+Commands:
+	inspec archive PATH    # archive a profile to tar.gz (default) or zip
+	inspec check PATH      # verify all tests at the specified PATH
+	inspec detect          # detect the target OS
+	inspec exec PATHS      # run all test files at the specified PATH.
+	inspec help [COMMAND]  # Describe available commands or one specific command
+	inspec json PATH       # read all tests in PATH and generate a JSON summary
+	inspec shell           # open an interactive debugging shell
+	inspec version         # prints the version of this tool
+					</code></pre>
+				</section> -->
+
+				<section>
+					<h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> One language</h3>
+					<ul class="vertical-list">
+						<li>Linux, Windows, BSD, Solaris, AIX, ...</li>
+						<li class=fragment>Bare-metal<span class=fragment>, VMs</span><span class=fragment>, Containers</span></li>
+					</ul>
+				</section>
+
+				<section data-transition="fade">
+					<h3>Tiny HowTo</h3>
+					<span>
+					<pre><code class="hljs bash">
+inspec exec test.rb
+					</code></pre>
+					<pre class=fragment><code class="hljs bash">
+.
+
+Finished in 0.00228 seconds (files took 1.95 seconds to load)
+1 example, 0 failures
+
+
+
+
+
+					</code></pre>
+				</section>
+				<section  data-transition="fade">
+					<h3>Tiny HowTo</h3>
+					<span>
+					<pre><code class="hljs bash">
+inspec exec test.rb
+					</code></pre>
+					<pre class=fragment><code class="hljs bash">
+inspec exec /path/to/profile
+					</code></pre>
+					<pre class=fragment><code class="hljs bash">
+inspec exec github.com/chef/some-profile.git
+					</code></pre>
+				</section>
+
+				<section data-transition="fade">
+					<h3>Test your local node</h3>
+					<pre><code class="hljs bash">
+inspec exec test.rb
+					</code></pre>
+					<p class=small>&nbsp;</p>
+				</section>
+
+				<section data-transition="fade">
+					<h3>Test remote via SSH</h3>
+					<pre><code class="hljs bash">
+inspec exec test.rb -i vagrant.key -t ssh://root@172.17.0.1:11022
+					</code></pre>
+					<p class=small>no Ruby / agent on the node</p>
+				</section>
+
+				<section data-transition="fade">
+					<h3>Test remote via WinRM</h3>
+					<pre><code class="hljs bash">
+inspec exec test.rb -t winrm://Admin@192.168.1.2 --password super
+					</code></pre>
+					<p class=small>no Ruby / agent on the node</p>
+				</section>
+
+				<section data-transition="fade-in">
+					<h3>Test Docker Container</h3>
+					<pre><code class="hljs bash">
+inspec exec test.rb -t docker://3cc8837bb6a8
+					</code></pre>
+					<p class=small>no SSH / agent on the container</p>
+				</section>
+
+				<section>
+					<h3>Anatomy of a container test</h3>
+					<pre><code class="hljs ruby">
+describe package('wget') do
+  it { should be_installed }
+end
+
+describe file('/fetch-all.sh') do
+  it { should be_file }
+  its('owner') { should eq 'root' }
+  its('mode') { should eq 0640 }
+end
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Anatomy of a container test</h3>
+					<pre><code class="hljs bash">
+inspec exec dtest.rb -t docker://f02e                                                                                              x1 8h44m master[d140c6a]
+					</code></pre>
+					<pre class=fragment><code class="hljs bash">
+....
+
+Finished in 0.1537 seconds (files took 1.77 seconds to load)
+4 examples, 0 failures
+					</code></pre>
+				</section>
+
+				<section>
+					<h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> One language</h3>
+					<ul class="vertical-list">
+						<li>Linux, Windows, BSD, Solaris, AIX, ...</li>
+						<li>Bare-metal, VMs, Containers</li>
+						<li class=fragment>Nodes<span class=fragment>, DBs, Endpoints</span><span class=fragment>, APIs (AWS, ...)</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>DB testing</h3>
+					<pre><code class="hljs ruby">
+describe mysql_session.query("SELECT user, host FROM mysql.user WHERE host = '%'") do
+  its(:stdout) { should be empty  }
+end
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>AWS testing</h3>
+					<pre><code class="hljs ruby">
+Vpc.new(id: 'vpc_id').security_groups.each do |security_group|
+  describe security_group do
+    it { should_not have_ingress_rule().with_source('0.0.0.0/0') }
+  end
+end
+					</code></pre>
+				</section>
+
 
 				<!-- <section>
 					<h2><span class="fragment highlight-red">Compliance</span> and <span class="fragment highlight-blue">integrity</span></h2>
@@ -349,6 +534,39 @@ control "xccdf_org.cisecurity.benchmarks_rule_6.2.1_Set_SSH_Protocol_to_2" do
 end
 						</code>
 					</pre>
+				</section>
+
+				<section>
+					<h3>Profile foundation</h3>
+					<img src="inheritance1.png" alt="Base profile for inheritance" />
+				</section>
+
+				<section>
+					<h3>Make adjustments</h3>
+					<img src="inheritance2.png" alt="Base profile inheritance" />
+				</section>
+
+				<section>
+					<h4>Native InSpec</h4>
+					<pre style="margin: 0 auto;">
+						<code class="hljs ruby">
+include_control "cis/cis-centos6-lvl1" do
+  skip_control "xccdf_org.cisecurity.benchmarks_rule_1.5.1_Set_UserGroup_Owner_on_etcgrub.conf"
+  skip_control "xccdf_org.cisecurity.benchmarks_rule_1.5.2_Set_Permissions_on_etcgrub.conf"
+
+  control "xccdf_org.cisecurity.benchmarks_rule_3.9_Remove_DNS_Server" do
+    impact 1.0
+  end
+end
+
+control "my-own-1" ...
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Spread to other environments</h3>
+					<img src="inheritance3.png" alt="More inheritance" />
 				</section>
 
 				<!-- <section>
