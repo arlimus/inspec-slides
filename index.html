@@ -77,6 +77,9 @@
 					<h3>Security and DevOps for High Velocity Organizations</h3>
 				</section>
 
+				<section>
+					<img src="full.workflow.png" alt="Full Workflow"/>
+				</section>
 
 				<section>
 					<h3 style="text-transform: lowercase;">$> whoarewe</h3>
@@ -122,6 +125,24 @@
 					<img src="business.functions.png" alt="Business functions" style="width: 70%;"/>
 				</section>
 				-->
+
+				<section>
+					<img src="compliance.v.velocity.1.png" alt="Compliance v Velocity 1" width="70%" />
+				</section>
+				<section>
+					<img src="compliance.v.velocity.2.png" alt="Compliance v Velocity 2" width="70%" />
+				</section>
+				<section>
+					<img src="compliance.v.velocity.3.png" alt="Compliance v Velocity 3" width="70%" />
+				</section>
+
+				<section>
+					<img src="compliance.v.velocity.4.png" alt="Compliance v Velocity 4" width="90%" />
+				</section>
+
+				<section>
+					<img src="detect-correct.png" alt="Detect and Correct" style="width: 80%;"/>
+				</section>
 
 				<section>
 					<h2>What is Chef?</h2>
@@ -306,7 +327,7 @@ Commands:
 					</ul>
 				</section>
 
-				<section data-transition="fade">
+				<!-- <section data-transition="fade">
 					<h3>Tiny HowTo</h3>
 					<span>
 					<pre><code class="hljs bash">
@@ -336,7 +357,7 @@ inspec exec /path/to/profile
 					<pre class=fragment><code class="hljs bash">
 inspec exec github.com/chef/some-profile.git
 					</code></pre>
-				</section>
+				</section> -->
 
 				<section data-transition="fade">
 					<h3>Test your local node</h3>
@@ -370,7 +391,7 @@ inspec exec test.rb -t docker://3cc8837bb6a8
 					<p class=small>no SSH / agent on the container</p>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Anatomy of a container test</h3>
 					<pre><code class="hljs ruby">
 describe package('wget') do
@@ -396,14 +417,14 @@ inspec exec dtest.rb -t docker://f02e                                           
 Finished in 0.1537 seconds (files took 1.77 seconds to load)
 4 examples, 0 failures
 					</code></pre>
-				</section>
+				</section> -->
 
 				<section>
 					<h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> One language</h3>
 					<ul class="vertical-list">
 						<li>Linux, Windows, BSD, Solaris, AIX, ...</li>
 						<li>Bare-metal, VMs, Containers</li>
-						<li class=fragment>Nodes<span class=fragment>, DBs, Endpoints</span><span class=fragment>, APIs (AWS, ...)</span></li>
+						<li class=fragment>Nodes<span class=fragment>, DBs, Endpoints</span><span class=fragment>, APIs (Azure, ...)</span></li>
 					</ul>
 				</section>
 
@@ -417,23 +438,20 @@ end
 				</section>
 
 				<section>
-					<h3>AWS testing</h3>
+					<h3>Cloud testing</h3>
 					<pre><code class="hljs ruby">
-Vpc.new(id: 'vpc_id').security_groups.each do |security_group|
+security_groups.each do |security_group|
   describe security_group do
-    it { should_not have_ingress_rule().with_source('0.0.0.0/0') }
+    it { should_not have_inbound_rule().with_source('0.0.0.0/0') }
   end
 end
 					</code></pre>
 				</section>
 
 
-				<!-- <section>
-					<h2><span class="fragment highlight-red">Compliance</span> and <span class="fragment highlight-blue">integrity</span></h2>
-				</section>
-
+				<!--
 				<section>
-					<img src="detect-correct.png" alt="Detect and Correct" style="width: 80%;"/>
+					<h2><span class="fragment highlight-red">Compliance</span> and <span class="fragment highlight-blue">integrity</span></h2>
 				</section>
 
 				<section>
@@ -624,21 +642,6 @@ inspec exec profile.tgz
 				</section>
 
 				<section>
-					<h2>Competitive Advantage</h2>
-					<img src="high.velocity.competitive.advantage.png" alt="Competitive Advantage" />
-					<h6>Book: The High Velocity Edge - Steven J. Spears</h6>
-				</section>
-
-				<section>
-					<h2>Safety at Velocity</h2>
-					<ul class="vertical-list">
-						<li class=fragment>Risk reduction when constantly changing your systems</li>
-						<li class=fragment>As part of the workflow. Not after, not later.</li>
-						<li class=fragment>Test for quality, Test for compliance</li>
-					</ul>
-				</section>
-
-				<section>
 					<h2>Traditional workflow</h2>
 				</section>
 
@@ -654,6 +657,21 @@ inspec exec profile.tgz
 
 				<section data-background="hoover.dam.jpg">
           &nbsp;
+				</section>
+
+				<section>
+					<h2>Competitive Advantage</h2>
+					<img src="high.velocity.competitive.advantage.png" alt="Competitive Advantage" />
+					<h6>Book: The High Velocity Edge - Steven J. Spears</h6>
+				</section>
+
+				<section>
+					<h2>Safety at Velocity</h2>
+					<ul class="vertical-list">
+						<li class=fragment>Risk reduction when constantly changing your systems</li>
+						<li class=fragment>As part of the workflow. Not after, not later.</li>
+						<li class=fragment>Test for quality, Test for compliance</li>
+					</ul>
 				</section>
 
 				<!-- <section data-background="nuclear.jpeg">
