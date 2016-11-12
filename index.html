@@ -463,34 +463,35 @@ inspec exec github.com/chef/some-profile.git
 
 				<section data-transition="fade">
 					<h3>Test your local node</h3>
+          <img src="run-local.png" style="width: 80%; margin: 0;">
 					<pre><code class="hljs bash">
-inspec exec test.rb
+inspec exec profile
 					</code></pre>
 					<p class=small>&nbsp;</p>
 				</section>
 
 				<section data-transition="fade">
 					<h3>Test remote via SSH</h3>
+          <img src="run-ssh.png" style="width: 80%; margin: 0;">
 					<pre><code class="hljs bash">
-inspec exec test.rb -i vagrant.key -t ssh://root@172.17.0.1:11022
+inspec exec profile -i vagrant.key -t ssh://root@172.17.0.1:11022
 					</code></pre>
-					<p class=small>no Ruby / agent on the node</p>
 				</section>
 
 				<section data-transition="fade">
 					<h3>Test remote via WinRM</h3>
+          <img src="run-winrm.png" style="width: 80%; margin: 0;">
 					<pre><code class="hljs bash">
-inspec exec test.rb -t winrm://Admin@192.168.1.2 --password super
+inspec exec profile -t winrm://Admin@192.168.1.2 --password super
 					</code></pre>
-					<p class=small>no Ruby / agent on the node</p>
 				</section>
 
 				<section data-transition="fade-in">
 					<h3>Test Docker Container</h3>
+          <img src="run-docker.png" style="width: 80%; margin: 0;">
 					<pre><code class="hljs bash">
-inspec exec test.rb -t docker://3cc8837bb6a8
+inspec exec profile -t docker://3cc8837bb6a8
 					</code></pre>
-					<p class=small>no SSH / agent on the container</p>
 				</section>
 
 				<!-- <section>
@@ -659,7 +660,7 @@ end
           <img src="inheritance3.png" alt="More inheritance" />
         </section>
 
-        <section>
+        <!-- <section>
           <h2>Habitat &amp; InSpec</h2>
         </section>
 
@@ -679,7 +680,7 @@ end
             <li class=fragment>Expose configuration of running state</li>
             <li class=fragment>Reduced attack surface; Focus on applications</li>
           </ul>
-        </section>
+        </section> -->
 
         <!--
         PART 2: WORKFLOW
