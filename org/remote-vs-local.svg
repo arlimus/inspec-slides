@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="remote-vs-local.svg"
-   inkscape:export-filename="run-docker.png"
+   inkscape:export-filename="run-ssh.png"
    inkscape:export-xdpi="199.99699"
    inkscape:export-ydpi="199.99699">
   <defs
@@ -166,9 +166,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="508.67925"
-     inkscape:cy="192.70966"
+     inkscape:zoom="0.7"
+     inkscape:cx="-12.732918"
+     inkscape:cy="252.172"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -200,33 +200,33 @@
        width="276.7818"
        height="72.225906"
        x="236.12692"
-       y="513.42285"
+       y="795.42285"
        ry="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="259.36044"
-       y="561.91016"
+       y="843.91016"
        id="text4138"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4140"
          x="259.36044"
-         y="561.91016">inspec</tspan></text>
+         y="843.91016">inspec</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleOutS)"
-       d="m 403.24626,550.42414 78.87312,-0.50508 -0.13923,14.22944"
+       d="m 403.24626,832.42414 78.87312,-0.50508 -0.13923,14.22944"
        id="path4144"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
     <text
        sodipodi:linespacing="125%"
        id="text5596"
-       y="701.91022"
+       y="983.91022"
        x="79.360443"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="701.91022"
+         y="983.91022"
          x="79.360443"
          id="tspan5598"
          sodipodi:role="line">inspec</tspan></text>
@@ -234,7 +234,7 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path5600"
-       d="m 229.24626,690.4241 223.88873,-0.4177"
+       d="m 229.24626,972.4241 223.88873,-0.4177"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7742)" />
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#e30080;stroke-width:5;stroke-miterlimit:2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -242,39 +242,39 @@
        width="180.31216"
        height="72.225906"
        x="476.12692"
-       y="653.42291"
+       y="935.42291"
        ry="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="322.91144"
-       y="721.79138"
+       y="1003.7914"
        id="text5604"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5606"
          x="322.91144"
-         y="721.79138">ssh</tspan></text>
+         y="1003.7914">ssh</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="79.360443"
-       y="841.91022"
+       y="1123.9102"
        id="text6196"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6198"
          x="79.360443"
-         y="841.91022">inspec</tspan></text>
+         y="1123.9102">inspec</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7812)"
-       d="m 229.24626,830.4241 223.88873,-0.4177"
+       d="m 229.24626,1112.4241 223.88873,-0.4177"
        id="path6200"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <rect
        ry="0"
-       y="793.42291"
+       y="1075.4229"
        x="476.12692"
        height="72.225906"
        width="180.31216"
@@ -283,22 +283,22 @@
     <text
        sodipodi:linespacing="125%"
        id="text6204"
-       y="862.78339"
+       y="1144.7834"
        x="301.06738"
        style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="862.78339"
+         y="1144.7834"
          x="301.06738"
          id="tspan6206"
          sodipodi:role="line">winrm</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text6210"
-       y="981.91022"
+       y="1263.9102"
        x="59.360443"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="981.91022"
+         y="1263.9102"
          x="59.360443"
          id="tspan6212"
          sodipodi:role="line">inspec</tspan></text>
@@ -306,7 +306,7 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path6214"
-       d="m 209.24626,970.4241 223.88873,-0.4177"
+       d="m 209.24626,1252.4241 223.88873,-0.4177"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5662)" />
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#858585;stroke-width:5;stroke-miterlimit:2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -314,35 +314,35 @@
        width="129.66457"
        height="72.225891"
        x="456.12692"
-       y="933.42291"
+       y="1215.4229"
        ry="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="300.2944"
-       y="1002.7655"
+       y="1284.7655"
        id="text6218"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6220"
          x="300.2944"
-         y="1002.7655">api</tspan></text>
+         y="1284.7655">api</tspan></text>
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#858585;stroke-width:5;stroke-miterlimit:2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect6224"
        width="97.521667"
        height="31.51158"
        x="595.84125"
-       y="933.42291"
+       y="1215.4229"
        ry="0" />
     <text
        sodipodi:linespacing="125%"
        id="text4183"
-       y="696.43427"
+       y="978.43427"
        x="526.48291"
        style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#e30080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="696.43427"
+         y="978.43427"
          x="526.48291"
          id="tspan4185"
          sodipodi:role="line">Linux</tspan></text>
@@ -350,45 +350,45 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#e30080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="508.26862"
-       y="708.57709"
+       y="990.57709"
        id="text4187"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4189"
          x="508.26862"
-         y="708.57709"
+         y="990.57709"
          style="font-size:12.5px;fill:#e30080;fill-opacity:1">no Ruby / no agent</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00a7e4;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00a7e4;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="500.48291"
-       y="834.43427"
+       y="1116.4343"
        id="text4191"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4193"
          x="500.48291"
-         y="834.43427">Windows</tspan></text>
+         y="1116.4343">Windows</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4195"
-       y="846.57709"
+       y="1128.5771"
        x="508.26862"
-       style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00a7e4;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00a7e4;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-size:12.5px;fill:#00a7e4;fill-opacity:1;"
-         y="846.57709"
+         style="font-size:12.5px;fill:#00a7e4;fill-opacity:1"
+         y="1128.5771"
          x="508.26862"
          id="tspan4197"
          sodipodi:role="line">no Ruby / no agent</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4199"
-       y="978.00568"
+       y="1260.0056"
        x="468.34006"
-       style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#858585;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#858585;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="978.00568"
+         y="1260.0056"
          x="468.34006"
          id="tspan4201"
          sodipodi:role="line">Docker</tspan></text>
@@ -396,17 +396,17 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#858585;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="644.82123"
-       y="953.6485"
+       y="1235.6484"
        id="text4203"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          x="644.82123"
-         y="953.6485"
+         y="1235.6484"
          style="font-size:12.5px;text-align:center;text-anchor:middle;fill:#858585;fill-opacity:1"
          id="tspan4207">no Ruby</tspan></text>
     <rect
        ry="0"
-       y="975.42291"
+       y="1257.4229"
        x="595.84125"
        height="29.725891"
        width="97.521667"
@@ -415,18 +415,18 @@
     <text
        sodipodi:linespacing="125%"
        id="text4211"
-       y="994.57709"
+       y="1276.5771"
        x="644.82123"
        style="font-style:normal;font-weight:normal;font-size:29.60471153px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#858585;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan4215"
          style="font-size:12.5px;text-align:center;text-anchor:middle;fill:#858585;fill-opacity:1"
-         y="994.57709"
+         y="1276.5771"
          x="644.82123"
          sodipodi:role="line">no agent</tspan></text>
     <rect
        ry="0"
-       y="1074.4875"
+       y="1356.4875"
        x="456.37946"
        height="22.475769"
        width="37.763905"
@@ -438,11 +438,11 @@
        width="36.692436"
        height="22.475769"
        x="502.66516"
-       y="1074.4875"
+       y="1356.4875"
        ry="0" />
     <rect
        ry="0"
-       y="1074.4875"
+       y="1356.4875"
        x="548.45087"
        height="22.475769"
        width="36.871014"
@@ -454,11 +454,11 @@
        width="45.442451"
        height="22.475769"
        x="595.91516"
-       y="1074.4875"
+       y="1356.4875"
        ry="0" />
     <rect
        ry="0"
-       y="1074.4875"
+       y="1356.4875"
        x="650.55798"
        height="22.475769"
        width="42.763889"
