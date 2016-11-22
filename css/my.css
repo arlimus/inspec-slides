@@ -8,6 +8,26 @@ body {
   background: radial-gradient(center, circle cover, white 0%, #d4d4d4 100%);
   background-color: #d4d4d4;
 }
+.reveal h1.z, .reveal h2.z, .reveal h3.z {
+  text-shadow: none;
+}
+.reveal .z.blue {
+  background-color: #00aaff;
+  color: white;
+}
+.reveal .z.red {
+  background-color: #f70064;
+  color: white;
+}
+.reveal .z.green {
+  background-color: #09ef67;
+  color: white;
+}
+.reveal .z.gray {
+  background-color: #5a5a5a;
+  color: white;
+}
+
 .reveal .lightbg {
   background-color: rgba(255,255,255,0.6);
 }
