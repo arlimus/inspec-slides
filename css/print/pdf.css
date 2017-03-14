@@ -180,3 +180,21 @@ ul, ol, div, p {
   display: inline-block !important;
   padding: 1rem !important;
 }
+
+
+.reveal .z.blue {
+  background-color: #00aaff;
+  color: white;
+}
+.reveal .z.red {
+  background-color: #f70064;
+  color: white;
+}
+.reveal .z.green {
+  background-color: #09ef67;
+  color: white;
+}
+.reveal .z.gray {
+  background-color: #5a5a5a;
+  color: white;
+}
