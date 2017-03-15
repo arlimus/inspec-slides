@@ -27,6 +27,10 @@ body {
   background-color: #5a5a5a;
   color: white;
 }
+.reveal .z.orange {
+  background-color: #ef8602;
+  color: white;
+}
 
 .reveal .lightbg {
   background-color: rgba(255,255,255,0.6);
@@ -92,13 +96,21 @@ img {
 .reveal pre {
 	box-shadow: none;
 }
-.reveal .vertical-list {
+.reveal .block-list, .reveal .vertical-list {
 	list-style: none;
   margin: 0;
 }
-.vertical-list li {
+.block-list li, .vertical-list li {
 	list-style: none;
 	padding: 1rem;
+}
+.block-list li {
+  text-align: left;
+  padding: 0;
+}
+.block-list li span {
+  padding: 1rem 2rem;
+  display: inline-block;
 }
 .horizontal-list {
 	list-style: none;
