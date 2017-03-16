@@ -164,6 +164,23 @@ ul, ol, div, p {
 	font-size: 14px;
 }
 
+.reveal .block-list, .reveal .vertical-list {
+	list-style: none;
+  margin: 0;
+}
+.block-list li, .vertical-list li {
+	list-style: none;
+	padding: 1rem;
+}
+.block-list li {
+  text-align: left;
+  padding: 0;
+}
+.block-list li span {
+  padding: 1rem 2rem;
+  display: inline-block;
+}
+
 .reveal .vertical-list {
   list-style: none !important;
   margin: 0 !important;
@@ -196,5 +213,9 @@ ul, ol, div, p {
 }
 .reveal .z.gray {
   background-color: #5a5a5a;
+  color: white;
+}
+.reveal .z.orange {
+  background-color: #ef8602;
   color: white;
 }
