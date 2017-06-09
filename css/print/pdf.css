@@ -141,6 +141,10 @@ ul, ol, div, p {
 	z-index: -1;
 }
 
+.reveal section.contain .slide-background {
+  background-size: contain;
+}
+
 /* All elements should be above the slide-background */
 .reveal section>* {
 	position: relative;
